@@ -1,6 +1,7 @@
 import ApiStatus from "@/components/ApiStatus";
 import ProjectGallery from "@/components/ProjectGallery";
 import SiteHeader from "@/components/SiteHeader";
+import TechPopups from "@/components/TechPopups";
 
 const skills = [
   {
@@ -121,8 +122,7 @@ export default function Home() {
             <div className="art-ring ring-two" />
             <div className="art-ring ring-three" />
             <div className="art-sun" />
-            <span className="art-note note-top">CODE × CLOUD</span>
-            <span className="art-note note-bottom">BUILT FOR WHAT&apos;S NEXT</span>
+            <TechPopups />
             <span className="art-cross">+</span>
           </div>
           <div className="hero-footer">

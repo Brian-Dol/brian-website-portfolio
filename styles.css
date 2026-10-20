@@ -284,12 +284,6 @@ h1 span {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .art-ring {
-    animation: none;
-  }
-}
-
 .art-sun {
   position: absolute;
   top: 50%;
@@ -311,15 +305,44 @@ h1 span {
 }
 
 .note-top {
+  --tilt: 7deg;
   top: 25%;
   right: 11%;
-  transform: rotate(7deg);
 }
 
 .note-bottom {
+  --tilt: -8deg;
   bottom: 27%;
   left: 6%;
-  transform: rotate(-8deg);
+}
+
+.tech-pop {
+  border: 1px solid rgb(var(--accent-rgb) / 45%);
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: tech-pop 2.6s ease-in-out infinite;
+}
+
+@keyframes tech-pop {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--tilt)) scale(0.4);
+  }
+  14% {
+    opacity: 1;
+    transform: rotate(var(--tilt)) scale(1.08);
+  }
+  22%,
+  78% {
+    opacity: 1;
+    transform: rotate(var(--tilt)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--tilt)) scale(0.4);
+  }
 }
 
 .art-cross {
