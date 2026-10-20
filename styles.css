@@ -1116,6 +1116,70 @@ h2 span {
   line-height: 1.75;
 }
 
+.project-art-site {
+  background: #1d2c3a;
+}
+
+.site-window {
+  width: 74%;
+  overflow: hidden;
+  border: 1px solid rgb(237 241 232 / 30%);
+  background: rgb(17 21 18 / 80%);
+}
+
+.site-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 9px;
+  border-bottom: 1px solid rgb(237 241 232 / 20%);
+}
+
+.site-bar i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgb(237 241 232 / 35%);
+}
+
+.site-bar span {
+  margin-left: 8px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+
+.site-body {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+}
+
+.site-hero {
+  height: 46px;
+  background: rgb(var(--accent-rgb) / 30%);
+}
+
+.site-line {
+  height: 6px;
+  background: rgb(237 241 232 / 22%);
+}
+
+.site-line.short {
+  width: 60%;
+}
+
+.project-visit {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .project-art-automation {
   background: #29352c;
 }

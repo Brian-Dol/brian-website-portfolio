@@ -48,6 +48,32 @@ const projects = [
     details:
       "Applied cloud and network security principles to a full-stack financial forecasting application, with distinct roles for administrators and investors.",
   },
+  {
+    title: "Shams Free Zone website",
+    category: "Websites & e-commerce",
+    description:
+      "Corporate website for Shams, Sharjah's digital-first free zone, helping businesses set up a UAE company fully online.",
+    technologies: ["WORDPRESS", "ELEMENTOR", "WPML", "SEO"],
+    art: "project-art-site",
+    artLabel: "WORDPRESS / MULTILINGUAL",
+    siteName: "shamsfz.ae",
+    href: "https://shamsfz.ae/",
+    details:
+      "A multilingual WordPress site built with Elementor that presents free zone licensing, business activities and visa options, with a focus on clear conversion paths for founders setting up a company online.",
+  },
+  {
+    title: "Run Your Task",
+    category: "Websites & e-commerce",
+    description:
+      "Services platform for Kenyans all over the globe, with a quote request flow and WhatsApp contact.",
+    technologies: ["WEB DEVELOPMENT", "QUOTE FORMS", "WHATSAPP"],
+    art: "project-art-site",
+    artLabel: "SERVICES / GLOBAL",
+    siteName: "runyourtask.com",
+    href: "https://runyourtask.com/",
+    details:
+      "A services website that lets customers request a quote through a contact form or reach the team directly on WhatsApp, making it easy for people abroad to get tasks done in Kenya.",
+  },
 ];
 
 const categories = ["All", ...new Set(projects.map((project) => project.category))];
@@ -123,6 +149,21 @@ export default function ProjectGallery() {
                   <span className="forecast-label">SCENARIO → OUTLOOK</span>
                 </div>
               )}
+              {project.art === "project-art-site" && (
+                <div className="site-window">
+                  <div className="site-bar">
+                    <i />
+                    <i />
+                    <i />
+                    <span>{project.siteName}</span>
+                  </div>
+                  <div className="site-body">
+                    <span className="site-hero" />
+                    <span className="site-line" />
+                    <span className="site-line short" />
+                  </div>
+                </div>
+              )}
               <span className="art-index">
                 {String(index + 1).padStart(2, "0")} / {project.artLabel}
               </span>
@@ -142,6 +183,11 @@ export default function ProjectGallery() {
             <details className="project-details">
               <summary>Project details <span aria-hidden="true">＋</span></summary>
               <p>{project.details}</p>
+              {project.href && (
+                <a className="project-visit" href={project.href} target="_blank" rel="noopener noreferrer">
+                  Visit live site ↗
+                </a>
+              )}
             </details>
           </article>
         ))}
