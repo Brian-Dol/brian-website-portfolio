@@ -4,7 +4,8 @@
   --ink: #edf1e8;
   --muted: #a1aaa0;
   --line: #303832;
-  --accent: #c3ee68;
+  --accent: #69b9ff;
+  --accent-rgb: 105 185 255;
   --surface: #191f1b;
   --body-muted: #c0c8be;
   --display: "Manrope", sans-serif;
@@ -174,8 +175,8 @@ button {
   height: 7px;
   margin-right: 8px;
   border-radius: 50%;
-  background: #9fc84d;
-  box-shadow: 0 0 0 4px rgb(195 238 104 / 30%);
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgb(var(--accent-rgb) / 30%);
 }
 
 h1,
@@ -226,7 +227,7 @@ h1 span {
   justify-self: end;
   overflow: hidden;
   border-radius: 50%;
-  background: #202a23;
+  background: #1a2732;
 }
 
 .hero-art::before,
@@ -237,7 +238,7 @@ h1 span {
 }
 
 .hero-art::before {
-  background-image: radial-gradient(#a6b99b 0.65px, transparent 0.65px);
+  background-image: radial-gradient(#8ebfe7 0.65px, transparent 0.65px);
   background-size: 8px 8px;
   opacity: 0.12;
 }
@@ -280,7 +281,7 @@ h1 span {
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 75px rgb(195 238 104 / 50%);
+  box-shadow: 0 0 75px rgb(var(--accent-rgb) / 50%);
 }
 
 .art-note {
@@ -730,7 +731,7 @@ h2 span {
 }
 
 .contact-button:hover {
-  background: #d2f88a;
+  background: #8acbff;
   transform: translateY(-2px);
 }
 
@@ -759,7 +760,7 @@ h2 span {
 .orbit-b {
   right: 4%;
   width: 35vw;
-  border-color: rgb(195 238 104 / 31%);
+  border-color: rgb(var(--accent-rgb) / 38%);
   transform: translateY(-50%) rotate(40deg) scaleY(0.55);
 }
 
@@ -1146,7 +1147,7 @@ h2 span {
 .map-contours span:nth-child(4) {
   inset: 47%;
   border-radius: 43% 57% 58% 42% / 62% 39% 61% 38%;
-  background: rgb(195 238 104 / 65%);
+  background: rgb(var(--accent-rgb) / 72%);
 }
 
 .project-art-forecast {
@@ -1184,20 +1185,20 @@ h2 span {
 
 .chart-line {
   fill: none;
-  stroke: #a9cd70;
+  stroke: var(--accent);
   stroke-linecap: round;
   stroke-width: 4;
 }
 
 .forecast-panel circle {
   fill: var(--accent);
-  stroke: #a9cd70;
+  stroke: var(--accent);
   stroke-width: 3;
 }
 
 .project-outcome {
   margin: 14px 0 0;
-  color: #b8d98a;
+  color: var(--accent);
   font-size: 11px;
   font-weight: 700;
 }
@@ -1254,7 +1255,7 @@ h2 span {
   height: 9px;
   border: 1px solid var(--paper);
   border-radius: 50%;
-  background: #a9cd70;
+  background: var(--accent);
   content: "";
 }
 
@@ -1300,7 +1301,7 @@ h2 span {
 
 .timeline-highlight {
   margin: 0;
-  color: #b8d98a;
+  color: var(--accent);
   font-size: 11px;
   font-weight: 700;
   line-height: 1.6;
@@ -1521,8 +1522,8 @@ h2 span {
 }
 
 .api-status-online .api-status-dot {
-  background: #8aaa4f;
-  box-shadow: 0 0 0 3px rgb(138 170 79 / 20%);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgb(var(--accent-rgb) / 20%);
 }
 
 .api-status-offline .api-status-dot {
