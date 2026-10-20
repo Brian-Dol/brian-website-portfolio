@@ -5,11 +5,13 @@ export const metadata: Metadata = {
   title: "Brian Dol — Senior Full Stack Software Engineer",
   description:
     "Brian Dol is a senior full stack software engineer building web applications, APIs, and AI-powered digital solutions.",
+  metadataBase: new URL("https://brian-website-portfolio.dol-brian23.workers.dev"),
   openGraph: {
     title: "Brian Dol — Senior Full Stack Software Engineer",
     description:
       "Full stack engineering, AI integrations, cloud systems, and practical digital solutions.",
     type: "website",
+    url: "https://brian-website-portfolio.dol-brian23.workers.dev",
   },
 };
 

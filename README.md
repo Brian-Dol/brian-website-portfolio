@@ -2,6 +2,8 @@
 
 A Next.js and TypeScript portfolio with responsive project filtering, expandable case studies, and a live API health indicator. Cloudflare's vinext adapter prepares the app to run on Cloudflare Workers.
 
+Live site: https://brian-website-portfolio.dol-brian23.workers.dev
+
 ## Develop locally
 
 Install dependencies with `npm install`, then run `npm run dev` for the standard Next.js development server. Use `npm run dev:vinext` to run the Cloudflare-compatible development server.
