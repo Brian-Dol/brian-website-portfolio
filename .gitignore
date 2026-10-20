@@ -1,0 +1,9 @@
+/dist/
+.vinext/
+.cloudflare/
+/node_modules/
+/.next/
+/.wrangler/
+.env*
+!.env.example
+*.tsbuildinfo
