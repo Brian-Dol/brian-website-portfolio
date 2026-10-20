@@ -57,6 +57,7 @@ const projects = [
     art: "project-art-site",
     artLabel: "WORDPRESS / MULTILINGUAL",
     siteName: "shamsfz.ae",
+    image: "/projects/shams.png",
     href: "https://shamsfz.ae/",
     details:
       "A multilingual WordPress site built with Elementor that presents free zone licensing, business activities and visa options, with a focus on clear conversion paths for founders setting up a company online.",
@@ -70,6 +71,7 @@ const projects = [
     art: "project-art-site",
     artLabel: "SERVICES / GLOBAL",
     siteName: "runyourtask.com",
+    image: "/projects/runyourtask.png",
     href: "https://runyourtask.com/",
     details:
       "A services website that lets customers request a quote through a contact form or reach the team directly on WhatsApp, making it easy for people abroad to get tasks done in Kenya.",
@@ -149,7 +151,11 @@ export default function ProjectGallery() {
                   <span className="forecast-label">SCENARIO → OUTLOOK</span>
                 </div>
               )}
-              {project.art === "project-art-site" && (
+              {project.image && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img className="project-thumb" src={project.image} alt="" loading="lazy" />
+              )}
+              {project.art === "project-art-site" && !project.image && (
                 <div className="site-window">
                   <div className="site-bar">
                     <i />

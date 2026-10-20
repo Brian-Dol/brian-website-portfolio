@@ -1116,6 +1116,21 @@ h2 span {
   line-height: 1.75;
 }
 
+.project-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.project-art-site .art-index {
+  z-index: 1;
+  padding: 3px 7px;
+  background: rgb(17 21 18 / 75%);
+}
+
 .project-art-site {
   background: #1d2c3a;
 }
