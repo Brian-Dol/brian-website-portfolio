@@ -4,6 +4,34 @@ import { useMemo, useState } from "react";
 
 const projects = [
   {
+    title: "Shams Free Zone website",
+    category: "Websites & e-commerce",
+    description:
+      "Corporate website for Shams, Sharjah's digital-first free zone, helping businesses set up a UAE company fully online.",
+    technologies: ["WORDPRESS", "ELEMENTOR", "WPML", "SEO"],
+    art: "project-art-site",
+    artLabel: "WORDPRESS / MULTILINGUAL",
+    siteName: "shamsfz.ae",
+    image: "/projects/shams.png",
+    href: "https://shamsfz.ae/",
+    details:
+      "A multilingual WordPress site built with Elementor that presents free zone licensing, business activities and visa options, with a focus on clear conversion paths for founders setting up a company online.",
+  },
+  {
+    title: "Run Your Task",
+    category: "Websites & e-commerce",
+    description:
+      "Services platform for Kenyans all over the globe, with a quote request flow and WhatsApp contact.",
+    technologies: ["WEB DEVELOPMENT", "QUOTE FORMS", "WHATSAPP"],
+    art: "project-art-site",
+    artLabel: "SERVICES / GLOBAL",
+    siteName: "runyourtask.com",
+    image: "/projects/runyourtask.png",
+    href: "https://runyourtask.com/",
+    details:
+      "A services website that lets customers request a quote through a contact form or reach the team directly on WhatsApp, making it easy for people abroad to get tasks done in Kenya.",
+  },
+  {
     title: "AI workflow automation",
     category: "AI & automation",
     description:
@@ -47,34 +75,6 @@ const projects = [
     artLabel: "CLOUD / SECURITY",
     details:
       "Applied cloud and network security principles to a full-stack financial forecasting application, with distinct roles for administrators and investors.",
-  },
-  {
-    title: "Shams Free Zone website",
-    category: "Websites & e-commerce",
-    description:
-      "Corporate website for Shams, Sharjah's digital-first free zone, helping businesses set up a UAE company fully online.",
-    technologies: ["WORDPRESS", "ELEMENTOR", "WPML", "SEO"],
-    art: "project-art-site",
-    artLabel: "WORDPRESS / MULTILINGUAL",
-    siteName: "shamsfz.ae",
-    image: "/projects/shams.png",
-    href: "https://shamsfz.ae/",
-    details:
-      "A multilingual WordPress site built with Elementor that presents free zone licensing, business activities and visa options, with a focus on clear conversion paths for founders setting up a company online.",
-  },
-  {
-    title: "Run Your Task",
-    category: "Websites & e-commerce",
-    description:
-      "Services platform for Kenyans all over the globe, with a quote request flow and WhatsApp contact.",
-    technologies: ["WEB DEVELOPMENT", "QUOTE FORMS", "WHATSAPP"],
-    art: "project-art-site",
-    artLabel: "SERVICES / GLOBAL",
-    siteName: "runyourtask.com",
-    image: "/projects/runyourtask.png",
-    href: "https://runyourtask.com/",
-    details:
-      "A services website that lets customers request a quote through a contact form or reach the team directly on WhatsApp, making it easy for people abroad to get tasks done in Kenya.",
   },
 ];
 
