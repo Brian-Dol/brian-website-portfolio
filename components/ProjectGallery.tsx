@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 
@@ -12,7 +12,7 @@ const projects = [
     art: "project-art-site",
     artLabel: "WORDPRESS / MULTILINGUAL",
     siteName: "shamsfz.ae",
-    image: "/projects/shams.png",
+    image: "/projects/shams.jpg",
     href: "https://shamsfz.ae/",
     details:
       "A multilingual WordPress site built with Elementor that presents free zone licensing, business activities and visa options, with a focus on clear conversion paths for founders setting up a company online.",
@@ -26,7 +26,7 @@ const projects = [
     art: "project-art-site",
     artLabel: "SERVICES / GLOBAL",
     siteName: "runyourtask.com",
-    image: "/projects/runyourtask.png",
+    image: "/projects/runyourtask.jpg",
     href: "https://runyourtask.com/",
     details:
       "A services website that lets customers request a quote through a contact form or reach the team directly on WhatsApp, making it easy for people abroad to get tasks done in Kenya.",
@@ -39,6 +39,7 @@ const projects = [
     technologies: ["LLM APIS", "INTEGRATIONS", "WORKFLOW AUTOMATION"],
     outcome: "Automations reduced manual workload by 70%+ in relevant workflows.",
     art: "project-art-automation",
+    image: "/projects/ai.jpg",
     artLabel: "AI / AUTOMATION",
     details:
       "Designed integrations around real operational handoffs, using APIs and webhooks to move information between business systems. The focus was to reduce repetitive work while keeping the workflows maintainable and reviewable.",
@@ -50,6 +51,7 @@ const projects = [
       "Contributed backend and API functionality for company and user profile features in a React and TypeScript product.",
     technologies: ["LARAVEL 12", "REACT", "TYPESCRIPT"],
     art: "project-art-admin",
+    image: "/projects/admin.jpg",
     artLabel: "LARAVEL / REACT",
     details:
       "Worked on company and user profile capabilities, keeping frontend presentation separate from backend business logic through an API-based integration.",
@@ -61,6 +63,7 @@ const projects = [
       "A data-focused API project for structured land-quality information and geospatial functionality.",
     technologies: ["DJANGO", "POSTGRESQL", "POSTGIS"],
     art: "project-art-land",
+    image: "/projects/land.jpg",
     artLabel: "DJANGO / POSTGIS",
     details:
       "Built around structured data management and spatial database capabilities, applying backend engineering and PostgreSQL/PostGIS integration to a geospatial use case.",
@@ -72,6 +75,7 @@ const projects = [
       "Cloud-based forecasting capstone with separate administrative and investor roles.",
     technologies: ["REACT", "DJANGO", "POSTGRESQL"],
     art: "project-art-forecast",
+    image: "/projects/forecast.jpg",
     artLabel: "CLOUD / SECURITY",
     details:
       "Applied cloud and network security principles to a full-stack financial forecasting application, with distinct roles for administrators and investors.",
@@ -109,7 +113,7 @@ export default function ProjectGallery() {
         {filteredProjects.map((project, index) => (
           <article className="project-card" key={project.title}>
             <div className={`project-art ${project.art}`} aria-hidden="true">
-              {project.art === "project-art-automation" && (
+              {project.art === "project-art-automation" && !project.image && (
                 <div className="workflow">
                   <span className="workflow-node">REQUEST</span>
                   <span className="workflow-connector" />
@@ -118,7 +122,7 @@ export default function ProjectGallery() {
                   <span className="workflow-node">ACTION</span>
                 </div>
               )}
-              {project.art === "project-art-admin" && (
+              {project.art === "project-art-admin" && !project.image && (
                 <div className="admin-window">
                   <div className="admin-sidebar" />
                   <div className="admin-content">
@@ -129,7 +133,7 @@ export default function ProjectGallery() {
                   </div>
                 </div>
               )}
-              {project.art === "project-art-land" && (
+              {project.art === "project-art-land" && !project.image && (
                 <div className="map-contours">
                   <span />
                   <span />
@@ -137,7 +141,7 @@ export default function ProjectGallery() {
                   <span />
                 </div>
               )}
-              {project.art === "project-art-forecast" && (
+              {project.art === "project-art-forecast" && !project.image && (
                 <div className="forecast-panel">
                   <span className="forecast-label">FORECAST</span>
                   <svg viewBox="0 0 300 150" role="presentation">
@@ -148,7 +152,7 @@ export default function ProjectGallery() {
                     />
                     <circle cx="295" cy="24" r="5" />
                   </svg>
-                  <span className="forecast-label">SCENARIO → OUTLOOK</span>
+                  <span className="forecast-label">SCENARIO â†’ OUTLOOK</span>
                 </div>
               )}
               {project.image && (
@@ -176,7 +180,9 @@ export default function ProjectGallery() {
             </div>
             <div className="project-meta">
               <div>
-                <h3>{project.title}</h3>
+                <h3>
+                  {project.href ? (<a className="project-title-link" href={project.href} target="_blank" rel="noopener noreferrer">{project.title} <span aria-hidden="true">↗</span></a>) : project.title}
+                </h3>
                 <p>{project.description}</p>
               </div>
             </div>
@@ -187,11 +193,11 @@ export default function ProjectGallery() {
             </div>
             {project.outcome && <p className="project-outcome">{project.outcome}</p>}
             <details className="project-details">
-              <summary>Project details <span aria-hidden="true">＋</span></summary>
+              <summary>Project details <span aria-hidden="true">ï¼‹</span></summary>
               <p>{project.details}</p>
               {project.href && (
                 <a className="project-visit" href={project.href} target="_blank" rel="noopener noreferrer">
-                  Visit live site ↗
+                  Visit live site â†—
                 </a>
               )}
             </details>
