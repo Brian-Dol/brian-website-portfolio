@@ -149,7 +149,7 @@ export default function Home() {
                   platforms, integrations, and practical AI automation.
                 </p>
                 <p className="about-copy">
-                  I enjoy making complex systems work together—and turning repetitive processes
+                  I enjoy making complex systems work together and turning repetitive processes
                   into reliable, useful tools for the people who depend on them.
                 </p>
               </div>
