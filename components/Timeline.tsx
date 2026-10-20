@@ -23,9 +23,14 @@ export default function Timeline({ roles }: { roles: Role[] }) {
     const update = () => {
       frame = 0;
       const rect = root.getBoundingClientRect();
-      const reach = Math.min(Math.max(window.innerHeight * 0.6 - rect.top, 0), rect.height);
+      const raw = window.innerHeight * 0.6 - rect.top;
+      const reach = Math.min(Math.max(raw, 0), rect.height);
       root.style.setProperty("--timeline-progress", `${reach}px`);
-      items.forEach((item) => item.classList.toggle("is-lit", item.offsetTop + 3 <= reach));
+      root.style.setProperty("--timeline-glow", raw > -40 && raw < rect.height + 40 ? "1" : "0");
+      items.forEach((item) => {
+        const flare = Math.max(0, 1 - Math.abs(item.offsetTop + 3 - reach) / 90);
+        item.style.setProperty("--flare", flare.toFixed(3));
+      });
     };
     const schedule = () => {
       if (!frame) frame = requestAnimationFrame(update);

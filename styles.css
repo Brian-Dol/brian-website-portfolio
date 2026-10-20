@@ -1279,13 +1279,16 @@ h2 span {
 
 .timeline::before {
   position: absolute;
-  top: 0;
-  bottom: auto;
+  top: calc(var(--timeline-progress, 0px) - 60px);
   left: -2px;
   width: 3px;
-  height: var(--timeline-progress, 0px);
-  background: var(--accent);
-  box-shadow: 0 0 10px rgb(var(--accent-rgb) / 60%);
+  height: 120px;
+  border-radius: 3px;
+  background: linear-gradient(transparent, var(--accent) 50%, transparent);
+  box-shadow: 0 0 14px rgb(var(--accent-rgb) / 70%);
+  opacity: var(--timeline-glow, 0);
+  transition: opacity 0.3s;
+  pointer-events: none;
   content: "";
 }
 
@@ -1309,14 +1312,11 @@ h2 span {
   height: 9px;
   border: 1px solid var(--paper);
   border-radius: 50%;
-  background: #465149;
-  content: "";
-  transition: background 0.3s, box-shadow 0.3s;
-}
-
-.timeline-item.is-lit::before {
   background: var(--accent);
-  box-shadow: 0 0 12px 2px rgb(var(--accent-rgb) / 70%);
+  box-shadow: 0 0 calc(var(--flare, 0) * 16px) calc(var(--flare, 0) * 5px)
+    rgb(var(--accent-rgb) / calc(var(--flare, 0) * 85%));
+  transform: scale(calc(1 + var(--flare, 0) * 0.5));
+  content: "";
 }
 
 .timeline-date {
