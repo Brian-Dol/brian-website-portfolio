@@ -152,7 +152,7 @@ export default function ProjectGallery() {
                     />
                     <circle cx="295" cy="24" r="5" />
                   </svg>
-                  <span className="forecast-label">SCENARIO â†’ OUTLOOK</span>
+                  <span className="forecast-label">SCENARIO → OUTLOOK</span>
                 </div>
               )}
               {project.image && (
@@ -193,11 +193,11 @@ export default function ProjectGallery() {
             </div>
             {project.outcome && <p className="project-outcome">{project.outcome}</p>}
             <details className="project-details">
-              <summary>Project details <span aria-hidden="true">ï¼‹</span></summary>
+              <summary>Project details <span aria-hidden="true">＋</span></summary>
               <p>{project.details}</p>
               {project.href && (
                 <a className="project-visit" href={project.href} target="_blank" rel="noopener noreferrer">
-                  Visit live site â†—
+                  Visit live site ↗
                 </a>
               )}
             </details>
