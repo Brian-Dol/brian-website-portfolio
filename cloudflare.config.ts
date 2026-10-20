@@ -2,7 +2,7 @@ import { bindings, defineConfig, defineWorker } from "cf/config";
 
 export default defineConfig({
   worker: defineWorker({
-    name: "brian-website-portfolio",
+    name: "portfolio",
     entrypoint: "vinext/server/fetch-handler",
     compatibilityDate: "2026-10-20",
     compatibilityFlags: ["nodejs_compat"],

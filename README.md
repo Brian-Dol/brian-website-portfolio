@@ -2,7 +2,7 @@
 
 A Next.js and TypeScript portfolio with responsive project filtering, expandable case studies, and a live API health indicator. Cloudflare's vinext adapter prepares the app to run on Cloudflare Workers.
 
-Live site: https://brian-website-portfolio.dol-brian23.workers.dev
+Live site: https://portfolio.dol-brian23.workers.dev
 
 Cloudflare Workers Builds is connected to the `main` branch. Pushing a commit triggers a production deployment.
 
