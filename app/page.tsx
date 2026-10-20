@@ -2,6 +2,7 @@ import ApiStatus from "@/components/ApiStatus";
 import ProjectGallery from "@/components/ProjectGallery";
 import SiteHeader from "@/components/SiteHeader";
 import TechPopups from "@/components/TechPopups";
+import Timeline from "@/components/Timeline";
 
 const skills = [
   {
@@ -193,21 +194,7 @@ export default function Home() {
                 </h2>
                 <p className="section-aside">2017, 2026</p>
               </div>
-              <div className="timeline">
-                {experience.map((role) => (
-                  <article className="timeline-item" key={role.company}>
-                    <p className="timeline-date">{role.date}</p>
-                    <div>
-                      <h3>{role.title}</h3>
-                      <p className="timeline-company">
-                        {role.company} <span>· {role.location}</span>
-                      </p>
-                      <p>{role.description}</p>
-                      {role.highlight && <p className="timeline-highlight">{role.highlight}</p>}
-                    </div>
-                  </article>
-                ))}
-              </div>
+              <Timeline roles={experience} />
             </div>
           </div>
         </section>
