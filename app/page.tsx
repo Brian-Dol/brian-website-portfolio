@@ -38,7 +38,7 @@ const skills = [
 
 const experience = [
   {
-    date: "AUG 2025 — AUG 2026",
+    date: "AUG 2025, AUG 2026",
     title: "Senior Full Stack Engineer · AI Systems Product Developer",
     company: "mAble",
     location: "Remote",
@@ -47,24 +47,24 @@ const experience = [
     highlight: "Automations reduced manual effort by 70%+ in relevant workflows.",
   },
   {
-    date: "MAR 2025 — AUG 2025",
+    date: "MAR 2025, AUG 2025",
     title: "Senior Web Developer · Growth & Digital Solutions Engineer",
-    company: "FZ SHAMS — SHAMS Services",
+    company: "FZ SHAMS, SHAMS Services",
     location: "Sharjah, UAE",
     description:
       "Developed WordPress experiences, multilingual sites, and Zoho/CRM integrations. Migrated startwith.shams.ae to shamsfz.ae with zero downtime and contributed to SEO and lead-generation improvements.",
     highlight: "Reported outcomes included +25% SEO improvement and +18% leads.",
   },
   {
-    date: "JAN 2020 — FEB 2025",
+    date: "JAN 2020, FEB 2025",
     title: "Senior Software Engineer · Project Manager",
     company: "Third World Nerds",
     location: "Dubai, UAE / Remote",
     description:
-      "Founded and ran a remote software agency delivering websites, APIs, e-commerce, and custom platforms. Led technical planning, engineering, QA, delivery, and client communication across approximately 10–20 client accounts.",
+      "Founded and ran a remote software agency delivering websites, APIs, e-commerce, and custom platforms. Led technical planning, engineering, QA, delivery, and client communication across approximately 10 to 20 client accounts.",
   },
   {
-    date: "JUN 2017 — DEC 2019",
+    date: "JUN 2017, DEC 2019",
     title: "Software Engineer · Web Developer",
     company: "DolTech Software Solutions",
     location: "Nairobi, Kenya",
@@ -75,7 +75,7 @@ const experience = [
 
 const education = [
   {
-    date: "2023 — 2024",
+    date: "2023, 2024",
     title: "MSc, Cloud and Network Security",
     school: "University of Bolton, UAE",
     result: "GPA 4.0 / 4.0",
@@ -83,7 +83,7 @@ const education = [
       "Focus: cloud security, cryptography, DevOps, GDPR, and ISO 27001. Capstone: secure cloud-based financial forecasting application.",
   },
   {
-    date: "2020 — 2023",
+    date: "2020, 2023",
     title: "BEng, Software Engineering",
     school: "University of Bolton, UAE",
     result: "Upper Second-Class Honours",
@@ -109,7 +109,7 @@ export default function Home() {
               <span>for real work.</span>
             </h1>
             <p className="hero-intro">
-              I&apos;m Brian Dol—a senior full stack engineer with 8+ years building web
+              I&apos;m Brian Dol, a senior full stack engineer with 8+ years building web
               applications, APIs, e-commerce platforms, and AI-enabled workflows from idea
               through production.
             </p>
@@ -191,7 +191,7 @@ export default function Home() {
                   <br />
                   <span>teams and time zones.</span>
                 </h2>
-                <p className="section-aside">2017 — 2026</p>
+                <p className="section-aside">2017, 2026</p>
               </div>
               <div className="timeline">
                 {experience.map((role) => (
