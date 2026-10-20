@@ -12,7 +12,12 @@ Run `npm run build:vinext` to build the Workers deployment. Run `npm run start:v
 
 ## Deploy
 
-After connecting Cloudflare authentication, run `npm run deploy:vinext` to deploy the app to Cloudflare Workers. The project can use a free `*.workers.dev` address. For automatic Git-based deployments, connect the GitHub repository through Cloudflare's Workers build setup.
+After connecting Cloudflare authentication, run `npm run deploy:vinext` to deploy the app to Cloudflare Workers. The project can use a free `*.workers.dev` address. For automatic Git-based deployments, connect the GitHub repository through Cloudflare Workers Builds and set:
+
+- Build command: `npm run build:vinext`
+- Deploy command: `npm run deploy:vinext`
+- Production branch: `main`
+- Root directory: `/`
 
 The Cloudflare `vinext` adapter is currently in beta. Its compatibility check and production build should be run again after adding framework features or upgrading dependencies.
 
