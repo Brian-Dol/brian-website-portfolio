@@ -308,12 +308,40 @@ h1 span {
   --tilt: 7deg;
   top: 25%;
   right: 11%;
+  border-radius: 999px;
+  padding: 8px 16px;
 }
 
 .note-bottom {
   --tilt: -8deg;
   bottom: 27%;
   left: 6%;
+  border-color: rgb(var(--accent-rgb) / 35%);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+  background: #0d1419;
+  color: #dff1ff;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.note-bottom::before {
+  margin-right: 6px;
+  color: var(--accent);
+  content: "</>";
+}
+
+.note-low {
+  --tilt: 4deg;
+  right: 9%;
+  bottom: 12%;
+  border-color: var(--accent);
+  border-radius: 6px 14px 6px 14px;
+  background: var(--accent);
+  color: #0b1219;
+  font-weight: 700;
+  box-shadow: 0 0 22px rgb(var(--accent-rgb) / 45%);
 }
 
 .tech-pop {
@@ -1298,6 +1326,18 @@ h2 span {
   grid-template-columns: 145px minmax(0, 1fr);
   gap: 25px;
   padding: 0 0 37px 24px;
+}
+
+.timeline::after {
+  position: absolute;
+  bottom: -4px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--paper);
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
 }
 
 .timeline-item:last-child {

@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 
 const INTERVAL_MS = 2600;
 
-const topTech = ["React", "Next.js", "TypeScript", "Vue", "Angular", "Node.js", "NestJS", "GraphQL", "Tailwind", "Vite"];
-const bottomTech = ["PHP", "Laravel", "Python", "Django", "FastAPI", "Java", "Spring Boot", "C#/.NET", "PostgreSQL", "Docker", "AWS", "Kubernetes"];
+const topTech = ["React", "Next.js", "TypeScript", "Vue", "Angular", "Tailwind", "Vite", "JavaScript"];
+const bottomTech = ["PHP", "Laravel", "Python", "Django", "FastAPI", "Java", "Spring Boot", "C#/.NET", "Node.js", "NestJS"];
+const lowTech = ["PostgreSQL", "MongoDB", "Redis", "GraphQL", "Docker", "AWS", "Kubernetes", "Terraform"];
 
 function PopNote({ items, className, offset }: { items: string[]; className: string; offset: number }) {
   const [index, setIndex] = useState(0);
@@ -33,7 +34,8 @@ export default function TechPopups() {
   return (
     <>
       <PopNote items={topTech} className="note-top" offset={0} />
-      <PopNote items={bottomTech} className="note-bottom" offset={INTERVAL_MS / 2} />
+      <PopNote items={bottomTech} className="note-bottom" offset={INTERVAL_MS / 3} />
+      <PopNote items={lowTech} className="note-low" offset={(INTERVAL_MS * 2) / 3} />
     </>
   );
 }
