@@ -8,8 +8,20 @@ type Role = {
   company: string;
   location: string;
   description: string;
-  highlight?: string;
+  bullets?: string[];
 };
+
+const OUTCOME = /(\d+(?:\.\d+)?(?:\+|%| ms)?(?: to \d+)?|zero downtime|4 languages)/gi;
+
+function Highlighted({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(OUTCOME).map((part, index) =>
+        index % 2 === 1 ? <strong key={index}>{part}</strong> : part,
+      )}
+    </>
+  );
+}
 
 export default function Timeline({ roles }: { roles: Role[] }) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -57,7 +69,15 @@ export default function Timeline({ roles }: { roles: Role[] }) {
               {role.company} <span>· {role.location}</span>
             </p>
             <p>{role.description}</p>
-            {role.highlight && <p className="timeline-highlight">{role.highlight}</p>}
+            {role.bullets && (
+              <ul className="timeline-bullets">
+                {role.bullets.map((bullet) => (
+                  <li key={bullet}>
+                    <Highlighted text={bullet} />
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </article>
       ))}
