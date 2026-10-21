@@ -225,7 +225,9 @@ export default function Home() {
       <main id="main">
         <section className="hero page-wrap" id="home">
           <div className="hero-copy">
-            <p className="hero-role">Senior Full Stack Engineer · AI Systems · Cloud &amp; Integrations</p>
+            <p className="hero-role">
+              <span className="status-dot" /> Senior Full Stack Engineer · AI Systems · Cloud &amp; Integrations
+            </p>
             <h1>
               Engineering
               <br />
