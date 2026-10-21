@@ -1443,6 +1443,103 @@ h2 span {
   background: #29352c;
 }
 
+.project-art-portfolio {
+  background:
+    radial-gradient(circle at 78% 22%, rgb(var(--accent-rgb) / 18%), transparent 35%),
+    linear-gradient(145deg, #18242c, #111512 75%);
+}
+
+.portfolio-preview {
+  width: 76%;
+  overflow: hidden;
+  border: 1px solid rgb(237 241 232 / 20%);
+  background: #111820;
+  box-shadow: 0 20px 50px rgb(0 0 0 / 45%);
+  transform: perspective(900px) rotateY(-7deg) rotateX(2deg);
+}
+
+.portfolio-preview-bar {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  border-bottom: 1px solid rgb(237 241 232 / 10%);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 8px;
+}
+
+.portfolio-preview-bar i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ef7180;
+}
+
+.portfolio-preview-bar i:nth-child(2) { background: #ecc45d; }
+.portfolio-preview-bar i:nth-child(3) { background: #6ed19a; }
+.portfolio-preview-bar span {
+  min-width: 0;
+  margin-left: 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portfolio-preview-content {
+  display: flex;
+  min-height: 205px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 25px 9%;
+}
+
+.portfolio-preview-label {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.portfolio-preview-content strong {
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(20px, 3vw, 34px);
+  line-height: 1.05;
+  letter-spacing: -0.06em;
+}
+
+.portfolio-preview-line {
+  width: 45%;
+  height: 3px;
+  margin-top: 17px;
+  background: var(--accent);
+  box-shadow: 0 0 14px rgb(var(--accent-rgb) / 60%);
+}
+
+.portfolio-preview-api {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 17px;
+  color: #c4d0d8;
+  font-family: var(--mono);
+  font-size: 8px;
+}
+
+.portfolio-preview-api > span {
+  color: #7ee1b5;
+}
+
+.portfolio-preview-api i {
+  margin-left: 8px;
+  color: var(--accent);
+  font-style: normal;
+}
+
 .workflow {
   display: flex;
   width: 83%;
@@ -2243,6 +2340,32 @@ h2 span {
   color: var(--body-muted);
   font-size: 12px;
   line-height: 1.75;
+}
+
+.project-detail-heading {
+  margin: 18px 0 8px;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-detail-list {
+  display: grid;
+  gap: 7px;
+  max-width: 620px;
+  margin: 0 0 15px;
+  padding-left: 18px;
+  color: var(--body-muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.project-detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
 }
 
 .project-count {

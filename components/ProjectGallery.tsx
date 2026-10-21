@@ -45,6 +45,34 @@ const projects = [
       "Designed integrations around real operational handoffs, using APIs and webhooks to move information between business systems. The focus was to reduce repetitive work while keeping the workflows maintainable and reviewable.",
   },
   {
+    title: "AI-Powered Engineering Portfolio",
+    category: "Full-stack applications",
+    description:
+      "A serverless portfolio with a conversational AI assistant, custom API endpoints, and automated Cloudflare deployments.",
+    technologies: [
+      "NEXT.JS 16",
+      "REACT 19",
+      "TYPESCRIPT",
+      "VINEXT",
+      "VITE 8",
+      "CLOUDFLARE WORKERS",
+      "WORKERS AI",
+      "LLAMA 3.1",
+    ],
+    art: "project-art-portfolio",
+    artLabel: "AI / SERVERLESS",
+    details:
+      "Designed and implemented the portfolio, project gallery, experience timeline, interactive UI, health endpoint, and AI chatbot. The main page is server-rendered, with client-side React state used where interaction is needed. The chat endpoint validates messages, limits conversation history, and calls Llama 3.1 through a Cloudflare Workers AI binding. The health endpoint returns application status and a timestamp.",
+    highlights: [
+      "Responsive hand-written CSS interface with project filters, scroll-reactive timeline effects, and reduced-motion support for applicable animations.",
+      "GitHub pushes trigger Cloudflare Workers Builds for automated builds and releases (not GitHub Actions).",
+    ],
+    tradeoffs:
+      "The chatbot uses a grounded system prompt rather than a vector database or retrieval pipeline because its knowledge base is small. Current opportunities include API rate limiting, automated tests, streamed responses, and improved chatbot accessibility. Key package versions are Next.js ^16.0.0, React ^19.0.0, vinext ^1.2.1, Vite ^8.3.0, and @vinext/cloudflare ^1.1.1; the version ranges and Cloudflare runtime adapter should be revalidated when upgrading.",
+    liveUrl: "https://portfolio.dol-brian23.workers.dev/",
+    sourceUrl: "https://github.com/Brian-Dol/brian-website-portfolio",
+  },
+  {
     title: "mAble Admin",
     category: "Full-stack applications",
     description:
@@ -122,6 +150,24 @@ export default function ProjectGallery() {
                   <span className="workflow-node">ACTION</span>
                 </div>
               )}
+              {project.art === "project-art-portfolio" && (
+                <div className="portfolio-preview">
+                  <div className="portfolio-preview-bar">
+                    <i />
+                    <i />
+                    <i />
+                    <span>portfolio.dol-brian23.workers.dev</span>
+                  </div>
+                  <div className="portfolio-preview-content">
+                    <span className="portfolio-preview-label">FULL STACK · AI · CLOUD</span>
+                    <strong>Engineering useful software<br />for real work.</strong>
+                    <span className="portfolio-preview-line" />
+                    <div className="portfolio-preview-api">
+                      <span>POST</span> /api/chat <i>AI ONLINE</i>
+                    </div>
+                  </div>
+                </div>
+              )}
               {project.art === "project-art-admin" && !project.image && (
                 <div className="admin-window">
                   <div className="admin-sidebar" />
@@ -195,6 +241,32 @@ export default function ProjectGallery() {
             <details className="project-details">
               <summary>Project details <span aria-hidden="true">＋</span></summary>
               <p>{project.details}</p>
+              {project.highlights && (
+                <>
+                  <h4 className="project-detail-heading">Engineering highlights</h4>
+                  <ul className="project-detail-list">
+                    {project.highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+              {project.tradeoffs && (
+                <>
+                  <h4 className="project-detail-heading">Engineering trade-offs</h4>
+                  <p>{project.tradeoffs}</p>
+                </>
+              )}
+              {project.liveUrl && (
+                <div className="project-detail-links">
+                  <a className="project-visit" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    Explore the live portfolio ↗
+                  </a>
+                  <a className="project-visit" href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
+                    View source code on GitHub ↗
+                  </a>
+                </div>
+              )}
               {project.href && (
                 <a className="project-visit" href={project.href} target="_blank" rel="noopener noreferrer">
                   Visit live site ↗
