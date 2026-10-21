@@ -71,6 +71,7 @@ const projects = [
       "The chatbot uses a grounded system prompt rather than a vector database or retrieval pipeline because its knowledge base is small. Current opportunities include API rate limiting, automated tests, streamed responses, and improved chatbot accessibility. Key package versions are Next.js ^16.0.0, React ^19.0.0, vinext ^1.2.1, Vite ^8.3.0, and @vinext/cloudflare ^1.1.1; the version ranges and Cloudflare runtime adapter should be revalidated when upgrading.",
     liveUrl: "https://portfolio.dol-brian23.workers.dev/",
     sourceUrl: "https://github.com/Brian-Dol/brian-website-portfolio",
+    caseStudyUrl: "/work/ai-powered-portfolio",
   },
   {
     title: "mAble Admin",
@@ -227,7 +228,22 @@ export default function ProjectGallery() {
             <div className="project-meta">
               <div>
                 <h3>
-                  {project.href ? (<a className="project-title-link" href={project.href} target="_blank" rel="noopener noreferrer">{project.title} <span aria-hidden="true">↗</span></a>) : project.title}
+                  {project.href ? (
+                    <a
+                      className="project-title-link"
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.title} <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : project.caseStudyUrl ? (
+                    <a className="project-title-link" href={project.caseStudyUrl}>
+                      {project.title} <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : (
+                    project.title
+                  )}
                 </h3>
                 <p>{project.description}</p>
               </div>
@@ -259,6 +275,9 @@ export default function ProjectGallery() {
               )}
               {project.liveUrl && (
                 <div className="project-detail-links">
+                  <a className="project-visit" href={project.caseStudyUrl}>
+                    Read the engineering case study →
+                  </a>
                   <a className="project-visit" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                     Explore the live portfolio ↗
                   </a>
