@@ -978,6 +978,22 @@ h2 span {
   line-height: 1.8;
 }
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  align-items: start;
+  gap: clamp(32px, 6vw, 88px);
+  margin-top: 12px;
+}
+
+.contact-copy > p {
+  max-width: 500px;
+  margin-bottom: 26px;
+  color: #c0c8be;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
 .contact-button {
   display: inline-flex;
   min-height: 49px;
@@ -2135,7 +2151,7 @@ h2 span {
 .contact-details {
   display: grid;
   gap: 18px;
-  margin: 30px 0 8px;
+  margin: 30px 0 28px;
 }
 
 .contact-details dt {
@@ -2155,8 +2171,9 @@ h2 span {
 }
 
 .contact-form-wrap {
-  max-width: 590px;
-  margin: 34px 0 38px;
+  width: 100%;
+  max-width: 640px;
+  margin: 0;
   padding: 22px;
   border: 1px solid var(--line);
   background: rgb(255 255 255 / 2%);
@@ -2296,6 +2313,14 @@ h2 span {
 }
 
 @media (max-width: 760px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrap {
+    max-width: 590px;
+  }
+
   .contact-form-row {
     grid-template-columns: 1fr;
   }

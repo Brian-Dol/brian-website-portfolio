@@ -64,7 +64,7 @@ export default function ContactForm() {
           <input type="text" name="name" autoComplete="name" maxLength={100} required />
         </label>
         <label>
-          Work email
+          Email
           <input
             type="email"
             name="email"
@@ -75,12 +75,12 @@ export default function ContactForm() {
         </label>
       </div>
       <label>
-        Company <span>(optional)</span>
+        Subject
         <input
           type="text"
-          name="company"
-          autoComplete="organization"
+          name="subject"
           maxLength={150}
+          required
         />
       </label>
       <label>

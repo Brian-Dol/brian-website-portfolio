@@ -415,58 +415,62 @@ export default function Home() {
               <br />
               <span>something meaningful.</span>
             </h2>
-            <p>
-              I&apos;m seeking a <strong>full-time, long-term role</strong> where I can
-              contribute my experience in software engineering, web development, full-stack
-              development, AI-powered systems, cloud platforms, and integrations.
-            </p>
-            <p>
-              With a background in building and maintaining production applications, connecting
-              business systems, and solving complex technical problems, I bring a practical,
-              ownership-driven approach to engineering. I&apos;m looking for a team where I can
-              take responsibility, collaborate effectively, contribute to meaningful products,
-              and grow over time.
-            </p>
-            <p>
-              <strong>
-                If you&apos;re looking for an engineer who contributes beyond individual tasks
-                and grows with your team, I&apos;d welcome the conversation.
-              </strong>
-            </p>
-            <div className="contact-form-wrap">
-              <p className="eyebrow">SEND A MESSAGE</p>
-              <ContactForm />
+            <div className="contact-layout">
+              <div className="contact-copy">
+                <p>
+                  I&apos;m seeking a <strong>full-time, long-term role</strong> where I can
+                  contribute my experience in software engineering, web development, full-stack
+                  development, AI-powered systems, cloud platforms, and integrations.
+                </p>
+                <p>
+                  With a background in building and maintaining production applications,
+                  connecting business systems, and solving complex technical problems, I bring a
+                  practical, ownership-driven approach to engineering. I&apos;m looking for a team
+                  where I can take responsibility, collaborate effectively, contribute to
+                  meaningful products, and grow over time.
+                </p>
+                <p>
+                  <strong>
+                    If you&apos;re looking for an engineer who contributes beyond individual
+                    tasks and grows with your team, I&apos;d welcome the conversation.
+                  </strong>
+                </p>
+                <dl className="contact-details">
+                  <div>
+                    <dt>EMAIL</dt>
+                    <dd>
+                      <a href="mailto:dol.brian23@gmail.com">dol.brian23@gmail.com</a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>LOCATION</dt>
+                    <dd>Sharjah, United Arab Emirates · Open to remote opportunities</dd>
+                  </div>
+                  <div>
+                    <dt>CONNECT</dt>
+                    <dd>
+                      <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                        LinkedIn
+                      </a>{" "}
+                      ·{" "}
+                      <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                        GitHub
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
+                <a className="contact-button" href="mailto:dol.brian23@gmail.com">
+                  Discuss a Full-Time Opportunity <span aria-hidden="true">↗</span>
+                </a>
+                <a className="contact-email" href={CV_URL} target="_blank" rel="noopener noreferrer">
+                  Download My CV ↓
+                </a>
+              </div>
+              <div className="contact-form-wrap">
+                <p className="eyebrow">SEND A MESSAGE</p>
+                <ContactForm />
+              </div>
             </div>
-            <dl className="contact-details">
-              <div>
-                <dt>EMAIL</dt>
-                <dd>
-                  <a href="mailto:dol.brian23@gmail.com">dol.brian23@gmail.com</a>
-                </dd>
-              </div>
-              <div>
-                <dt>LOCATION</dt>
-                <dd>Sharjah, United Arab Emirates · Open to remote opportunities</dd>
-              </div>
-              <div>
-                <dt>CONNECT</dt>
-                <dd>
-                  <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
-                    LinkedIn
-                  </a>{" "}
-                  ·{" "}
-                  <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
-                    GitHub
-                  </a>
-                </dd>
-              </div>
-            </dl>
-            <a className="contact-button" href="mailto:dol.brian23@gmail.com">
-              Discuss a Full-Time Opportunity <span aria-hidden="true">↗</span>
-            </a>
-            <a className="contact-email" href={CV_URL} target="_blank" rel="noopener noreferrer">
-              Download My CV ↓
-            </a>
           </div>
           <div className="contact-orbit orbit-a" aria-hidden="true" />
           <div className="contact-orbit orbit-b" aria-hidden="true" />
