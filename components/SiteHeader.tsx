@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CV_URL } from "@/lib/profile";
 
 const links = [
   { href: "#about", label: "About" },
@@ -40,6 +41,15 @@ export default function SiteHeader() {
             {link.label}
           </a>
         ))}
+        <a
+          className="nav-cv"
+          href={CV_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setIsOpen(false)}
+        >
+          Download CV <span aria-hidden="true">↓</span>
+        </a>
         <a className="nav-contact" href="#contact" onClick={() => setIsOpen(false)}>
           Let&apos;s talk <span aria-hidden="true">↗</span>
         </a>

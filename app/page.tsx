@@ -1,4 +1,6 @@
 import ApiStatus from "@/components/ApiStatus";
+import Chatbot from "@/components/Chatbot";
+import { CV_URL } from "@/lib/profile";
 import ProjectGallery from "@/components/ProjectGallery";
 import SiteHeader from "@/components/SiteHeader";
 import TechPopups from "@/components/TechPopups";
@@ -117,6 +119,9 @@ export default function Home() {
             <a className="text-link" href="#work">
               Explore selected work <span aria-hidden="true">↓</span>
             </a>
+            <a className="text-link cv-link" href={CV_URL} target="_blank" rel="noopener noreferrer">
+              Download my CV <span aria-hidden="true">↓</span>
+            </a>
           </div>
           <div className="hero-art" aria-hidden="true">
             <div className="art-ring ring-one" />
@@ -234,6 +239,9 @@ export default function Home() {
             <a className="contact-email" href="mailto:dol.brian23@gmail.com">
               dol.brian23@gmail.com
             </a>
+            <a className="contact-email" href={CV_URL} target="_blank" rel="noopener noreferrer">
+              Download CV ↓
+            </a>
           </div>
           <div className="contact-orbit orbit-a" aria-hidden="true" />
           <div className="contact-orbit orbit-b" aria-hidden="true" />
@@ -254,6 +262,7 @@ export default function Home() {
           BACK TO TOP ↑
         </a>
       </footer>
+      <Chatbot />
     </>
   );
 }
