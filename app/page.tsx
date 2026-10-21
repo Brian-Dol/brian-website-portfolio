@@ -415,21 +415,21 @@ export default function Home() {
               something meaningful.
             </h2>
             <p>
-              I&apos;m seeking a <strong>full-time, permanent opportunity</strong> where I can
-              contribute my experience in software engineering, full stack development,
-              AI-powered systems, cloud platforms, and integrations as part of a long-term team.
+              I&apos;m seeking a <strong>full-time, long-term role</strong> where I can
+              contribute my experience in software engineering, web development, full-stack
+              development, AI-powered systems, cloud platforms, and integrations.
             </p>
             <p>
-              With experience building and maintaining production applications, connecting
+              With a background in building and maintaining production applications, connecting
               business systems, and solving complex technical problems, I bring a practical,
-              ownership-driven approach to engineering. I&apos;m looking to join an organization
-              where I can take responsibility, collaborate with talented people, contribute to
-              meaningful products, and continue growing over the long term.
+              ownership-driven approach to engineering. I&apos;m looking for a team where I can
+              take responsibility, collaborate effectively, contribute to meaningful products,
+              and grow over time.
             </p>
             <p>
               <strong>
-                If you&apos;re looking for an engineer who can contribute beyond individual tasks
-                and grow with your team, I&apos;d welcome the conversation.
+                If you&apos;re looking for an engineer who contributes beyond individual tasks
+                and grows with your team, I&apos;d welcome the conversation.
               </strong>
             </p>
             <dl className="contact-details">
