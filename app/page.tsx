@@ -31,12 +31,9 @@ const skills = [
       "LLM API integrations, AI-assisted development, workflow automation, webhooks, CRM integrations, Python and Node.js automation.",
   },
   {
-    title: "Data & Messaging",
-    tools: "PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, PostGIS, Kafka, RabbitMQ, WebSockets.",
-  },
-  {
-    title: "Cloud & DevOps",
-    tools: "AWS, Azure, Google Cloud, Docker, Kubernetes, Terraform, CI/CD, GitHub Actions, deployment automation.",
+    title: "Data, Cloud & DevOps",
+    tools:
+      "PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, PostGIS, Kafka, RabbitMQ, WebSockets, AWS, Azure, Google Cloud, Docker, Kubernetes, Terraform, CI/CD, GitHub Actions.",
   },
   {
     title: "Quality, Security & Delivery",
@@ -45,22 +42,92 @@ const skills = [
   },
 ];
 
-const howIWork = [
+const icons = {
+  search: "M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.3-4.3",
+  layers: "M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
+  code: "M16 18l6-6-6-6M8 6l-6 6 6 6",
+  check: "M22 11.1V12a10 10 0 1 1-5.9-9.1M22 4 12 14l-3-3",
+  shield: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+  target: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2z",
+  message: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z",
+  refresh: "M21 12a9 9 0 0 1-15.5 6.3L3 16M3 12A9 9 0 0 1 18.5 5.7L21 8M21 3v5h-5M3 21v-5h5",
+};
+
+type IconName = keyof typeof icons;
+
+function StepIcon({ name }: { name: IconName }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="18"
+      height="18"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d={icons[name]} />
+    </svg>
+  );
+}
+
+function StepsPanel({
+  label,
+  heading,
+  items,
+}: {
+  label: string;
+  heading: string;
+  items: { icon: IconName; title: string; text: string; tag: string }[];
+}) {
+  return (
+    <div className="steps-panel">
+      <div className="steps-intro">
+        <p className="eyebrow">{label}</p>
+        <h3>{heading}</h3>
+      </div>
+      <div className="steps-grid">
+        {items.map((item) => (
+          <article className="step" key={item.title}>
+            <span className="step-icon">
+              <StepIcon name={item.icon} />
+            </span>
+            <h4>{item.title}</h4>
+            <p>{item.text}</p>
+            <span className="step-tag">{item.tag}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const howIWork: { icon: IconName; title: string; text: string; tag: string }[] = [
   {
-    title: "Understand the problem.",
+    icon: "search",
+    title: "Understand the problem",
     text: "Clarify requirements, constraints, and the outcome the software needs to achieve.",
+    tag: "REQUIREMENTS",
   },
   {
-    title: "Design for maintainability.",
+    icon: "layers",
+    title: "Design for maintainability",
     text: "Choose appropriate technologies, define system boundaries, and keep components understandable.",
+    tag: "ARCHITECTURE",
   },
   {
-    title: "Build and integrate.",
+    icon: "code",
+    title: "Build and integrate",
     text: "Develop the application, connect APIs and external services, and handle real-world data and failure scenarios.",
+    tag: "APIS + DATA",
   },
   {
-    title: "Test and deliver.",
+    icon: "check",
+    title: "Test and deliver",
     text: "Validate functionality, troubleshoot issues, support deployment, and improve the solution based on results.",
+    tag: "QA + RELEASE",
   },
 ];
 
@@ -71,13 +138,8 @@ const experience = [
     company: "mAble / AI Systems Development",
     location: "Remote",
     description:
-      "Built and integrated application functionality across backend services, APIs, LLM-powered features, and external business systems. Focused on connecting services reliably, reviewing implementation quality, and preparing software for production use.",
-    bullets: [
-      "Developed AI-enabled application functionality and backend integrations.",
-      "Connected APIs, webhooks, and business tools to automate recurring operational workflows.",
-      "Applied AI-assisted development with code review, debugging, and validation to improve implementation quality.",
-      "Contributed to automation workflows that reduced manual workload by more than 70% in relevant processes.",
-    ],
+      "Built AI-enabled applications and API/webhook integrations across LLM services, backend systems, and business tools, and prepared them for production.",
+    bullets: ["Automations cut manual workload by 70%+ in relevant processes."],
   },
   {
     date: "MAR 2025, AUG 2025",
@@ -85,12 +147,9 @@ const experience = [
     company: "FZ SHAMS, SHAMS Services",
     location: "Sharjah, UAE",
     description:
-      "Delivered WordPress development, multilingual web experiences, CRM integrations, and website improvements supporting SHAMS' digital presence and lead-generation activities.",
+      "Delivered multilingual WordPress/Elementor sites (English, German, Russian, Arabic) and CRM integrations. Migrated startwith.shams.ae to shamsfz.ae with zero downtime.",
     bullets: [
-      "Developed and maintained WordPress and Elementor experiences across 4 languages: English, German, Russian, and Arabic.",
-      "Supported CRM integrations, API and webhook workflows, and marketing analytics implementations.",
-      "Migrated startwith.shams.ae to shamsfz.ae with zero downtime.",
-      "Contributed to reported improvements of 25% in SEO and 18% in leads, alongside a 30% gain in Arabic SEO reach and 20% more webinar registrations.",
+      "SEO up 25%, leads up 18%, Arabic SEO reach up 30%, webinar registrations up 20%.",
     ],
   },
   {
@@ -99,12 +158,10 @@ const experience = [
     company: "Third World Nerds",
     location: "Remote",
     description:
-      "Founded and operated a remote software agency delivering web applications, APIs, e-commerce platforms, and custom digital solutions for multiple clients.",
+      "Founded and ran a remote software agency delivering web apps, APIs, e-commerce, and custom platforms, covering technical planning, QA, delivery, and client communication.",
     bullets: [
-      "Led technical planning, implementation, QA, delivery coordination, and client communication across approximately 10 to 20 client accounts, with 85%+ client retention.",
-      "Built and maintained full stack applications, backend services, APIs, and third-party integrations.",
-      "Worked on real-time application functionality using WebSockets and Kafka, with reported latency below 200 ms in relevant workloads.",
-      "Improved deployment and delivery processes by approximately 75%, while balancing technical requirements, project timelines, and client needs.",
+      "Managed 10 to 20 client accounts with 85%+ retention.",
+      "Real-time systems (WebSockets, Kafka) under 200 ms latency; deployment cycles about 75% faster.",
     ],
   },
   {
@@ -113,32 +170,34 @@ const experience = [
     company: "DolTech Software Solutions",
     location: "Nairobi, Kenya",
     description:
-      "Developed and maintained websites, e-commerce functionality, and custom web solutions, with responsibilities spanning implementation, integration, and ongoing technical support.",
-    bullets: [
-      "Built websites and WordPress/WooCommerce solutions, including custom themes, plugins, and database-backed features.",
-      "Integrated third-party services and developed application functionality using PHP, JavaScript, and MySQL.",
-      "Supported hosting configuration, DNS, SSL, deployment, troubleshooting, and website maintenance.",
-      "Worked across implementation and support activities to keep client-facing websites functional and maintainable.",
-    ],
+      "Built websites, WordPress/WooCommerce solutions, custom themes and plugins, and third-party integrations, and supported hosting, DNS, SSL, and deployment.",
   },
 ];
 
-const approach = [
+const approach: { icon: IconName; title: string; text: string; tag: string }[] = [
   {
-    title: "Ownership:",
+    icon: "shield",
+    title: "Ownership",
     text: "I take responsibility for understanding the problem and moving work toward a usable outcome.",
+    tag: "END TO END",
   },
   {
-    title: "Practical problem-solving:",
+    icon: "target",
+    title: "Practical problem-solving",
     text: "I focus on the underlying cause, not just the visible symptom.",
+    tag: "ROOT CAUSE",
   },
   {
-    title: "Clear communication:",
+    icon: "message",
+    title: "Clear communication",
     text: "I work across technical and non-technical teams to keep requirements, decisions, and delivery aligned.",
+    tag: "ALIGNMENT",
   },
   {
-    title: "Continuous improvement:",
+    icon: "refresh",
+    title: "Continuous improvement",
     text: "I look for opportunities to simplify systems, improve reliability, and reduce unnecessary manual work.",
+    tag: "RELIABILITY",
   },
 ];
 
@@ -149,22 +208,16 @@ const education = [
     school: "University of Bolton, UAE",
     result: "GPA: 4.0 / 4.0",
     detail:
-      "Focused on cloud security, cryptography, DevOps, data protection, GDPR, and ISO 27001 principles.",
-    capstone: {
-      title: "Secure Cloud-Based Financial Forecasting Application.",
-      text: "Applied software engineering and security concepts to a cloud-based financial forecasting system with separate administrative and investor roles.",
-    },
+      "Focused on cloud security, cryptography, DevOps, GDPR, and ISO 27001. Capstone: secure cloud-based financial forecasting application with separate administrator and investor roles.",
   },
   {
     date: "2020, 2023",
     title: "BEng, Software Engineering",
     school: "University of Bolton, UAE",
     result: "GPA: 3.6 / 4.0 · Upper Second-Class Honours",
-    detail:
-      "Recognized on the Dean's List. Developed a foundation in software engineering principles, application development, database systems, and structured problem-solving.",
+    detail: "Dean's List recipient, with a foundation in software engineering, application development, and database systems.",
   },
 ];
-
 export default function Home() {
   return (
     <>
@@ -172,9 +225,6 @@ export default function Home() {
       <main id="main">
         <section className="hero page-wrap" id="home">
           <div className="hero-copy">
-            <p className="eyebrow hero-name">
-              <span className="status-dot" /> BRIAN DOL
-            </p>
             <p className="hero-role">Senior Full Stack Engineer · AI Systems · Cloud &amp; Integrations</p>
             <h1>
               Engineering
@@ -188,10 +238,6 @@ export default function Home() {
               solve practical business problems. With 9+ years of experience across full-stack
               engineering, backend systems, cloud infrastructure, and digital platforms, I take
               products from initial requirements to production-ready solutions.
-            </p>
-            <p className="hero-intro">
-              I care about more than getting software to work. I care about making it reliable,
-              maintainable, secure, and genuinely useful.
             </p>
             <div className="hero-actions">
               <a className="text-link" href="#work">
@@ -269,21 +315,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="skills-block">
-              <div className="skills-heading">
-                <p className="eyebrow section-label">HOW I WORK</p>
-              </div>
-              <div className="skills-grid">
-                {howIWork.map((step, index) => (
-                  <article className="skill-card" key={step.title}>
-                    <h3>
-                      {String(index + 1).padStart(2, "0")} {step.title}
-                    </h3>
-                    <p>{step.text}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
+            <StepsPanel label="HOW I WORK" heading="A clear process, from idea to release." items={howIWork} />
           </div>
         </section>
 
@@ -316,19 +348,11 @@ export default function Home() {
                 business-critical web platforms.
               </p>
               <Timeline roles={experience} />
-              <div className="skills-block approach-block">
-                <div className="skills-heading">
-                  <p className="eyebrow section-label">HOW I APPROACH ENGINEERING</p>
-                </div>
-                <div className="skills-grid">
-                  {approach.map((item) => (
-                    <article className="skill-card" key={item.title}>
-                      <h3>{item.title}</h3>
-                      <p>{item.text}</p>
-                    </article>
-                  ))}
-                </div>
-              </div>
+              <StepsPanel
+                label="HOW I APPROACH ENGINEERING"
+                heading="Principles behind the work."
+                items={approach}
+              />
             </div>
           </div>
         </section>
@@ -352,14 +376,6 @@ export default function Home() {
                         {item.school} <span>· {item.result}</span>
                       </p>
                       <p className="education-note">{item.detail}</p>
-                      {item.capstone && (
-                        <div className="education-capstone">
-                          <p className="eyebrow">CAPSTONE PROJECT</p>
-                          <p>
-                            <strong>{item.capstone.title}</strong> {item.capstone.text}
-                          </p>
-                        </div>
-                      )}
                     </div>
                   </article>
                 ))}
@@ -370,23 +386,29 @@ export default function Home() {
 
         <section className="contact section-pad" id="contact">
           <div className="page-wrap contact-inner">
-            <p className="eyebrow section-label">05 / GET IN TOUCH</p>
+            <p className="eyebrow section-label">05 / CAREER OPPORTUNITIES</p>
             <h2>
               Let&apos;s build
               <br />
-              something useful.
+              something meaningful.
             </h2>
             <p>
-              Have a product to build, a technical challenge to solve, or an engineering
-              opportunity in mind?
+              I&apos;m seeking a <strong>full-time, permanent opportunity</strong> where I can
+              contribute my experience in software engineering, full stack development,
+              AI-powered systems, cloud platforms, and integrations as part of a long-term team.
             </p>
             <p>
-              I&apos;m interested in work involving web development, full stack applications,
-              backend systems, AI-powered workflows, cloud platforms, and integrations.
+              With experience building and maintaining production applications, connecting
+              business systems, and solving complex technical problems, I bring a practical,
+              ownership-driven approach to engineering. I&apos;m looking to join an organization
+              where I can take responsibility, collaborate with talented people, contribute to
+              meaningful products, and continue growing over the long term.
             </p>
             <p>
-              If you value practical problem-solving, thoughtful engineering, and software built
-              for real-world use, let&apos;s talk.
+              <strong>
+                If you&apos;re looking for an engineer who can contribute beyond individual tasks
+                and grow with your team, I&apos;d welcome the conversation.
+              </strong>
             </p>
             <dl className="contact-details">
               <div>
@@ -397,7 +419,7 @@ export default function Home() {
               </div>
               <div>
                 <dt>LOCATION</dt>
-                <dd>{LOCATION}</dd>
+                <dd>Sharjah, United Arab Emirates · Open to remote opportunities</dd>
               </div>
               <div>
                 <dt>CONNECT</dt>
@@ -413,7 +435,7 @@ export default function Home() {
               </div>
             </dl>
             <a className="contact-button" href="mailto:dol.brian23@gmail.com">
-              Email Me <span aria-hidden="true">↗</span>
+              Discuss a Full-Time Opportunity <span aria-hidden="true">↗</span>
             </a>
             <a className="contact-email" href={CV_URL} target="_blank" rel="noopener noreferrer">
               Download My CV ↓
@@ -433,6 +455,7 @@ export default function Home() {
           </span>
           <span>BRIAN DOL · SENIOR SOFTWARE ENGINEER</span>
         </a>
+        <span>Seeking a long-term role in software engineering and digital product development.</span>
         <span>© {new Date().getFullYear()} BRIAN DOL.</span>
         <a className="back-top" href="#home">
           BACK TO TOP ↑
