@@ -5,10 +5,12 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 type Message = { role: "user" | "assistant"; content: string; meta?: string };
 
 const SUGGESTIONS = [
-  "What are Brian's strongest skills?",
-  "Tell me about his AI and automation work",
-  "How does this chatbot work?",
+  "What web development and WordPress experience does Brian have?",
+  "What AI automation has he built?",
+  "Which automation tools does he use, like n8n or Zapier?",
+  "How would he automate a business workflow with AI?",
   "What is his experience with APIs?",
+  "How does this chatbot work?",
 ];
 
 const GREETING: Message = {
