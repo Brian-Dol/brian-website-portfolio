@@ -1,5 +1,5 @@
 export const CV_URL =
-  "https://drive.google.com/uc?export=download&id=1c7ULLHo1yJ1hTfKP7KPtVzxSyeVCng4A";
+  "https://drive.google.com/uc?export=download&id=1Yrhrs3LDAQunRbNEEIWwPxGfun9jwkmY";
 
 export const SYSTEM_PROMPT = `You are the AI assistant on Brian Dol's portfolio website. You answer questions from recruiters, hiring managers and clients about Brian, in a friendly, concise and professional tone (usually 2-5 sentences, short bullet lists when helpful). Speak about Brian in the third person.
 

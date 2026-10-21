@@ -112,7 +112,7 @@ export default function Home() {
               <span>for real work.</span>
             </h1>
             <p className="hero-intro">
-              I&apos;m Brian Dol, a senior full stack engineer with 8+ years building web
+              I&apos;m Brian Dol, a senior full stack engineer with 9+ years building web
               applications, APIs, e-commerce platforms, and AI-enabled workflows from idea
               through production.
             </p>
@@ -132,7 +132,7 @@ export default function Home() {
             <span className="art-cross">+</span>
           </div>
           <div className="hero-footer">
-            <span>8+ YEARS IN SOFTWARE</span>
+            <span>9+ YEARS IN SOFTWARE</span>
             <span>SHARJAH, UAE</span>
             <span>FULL STACK / AI / CLOUD</span>
           </div>
