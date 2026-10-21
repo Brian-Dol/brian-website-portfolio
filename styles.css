@@ -1834,7 +1834,8 @@ h2 span {
   }
 }
 
-.contact-inner p strong {
+.contact-inner p strong,
+.skill-card p strong {
   color: var(--ink);
 }
 

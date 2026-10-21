@@ -28,7 +28,7 @@ const skills = [
   {
     title: "AI Systems & Automation",
     tools:
-      "LLM API integrations, AI-assisted development, workflow automation, webhooks, CRM integrations, Python and Node.js automation.",
+      "LLM API integrations, AI-assisted development, workflow automation, webhooks, CRM integrations, Python/Node.js automation, **n8n**, **Make.com**, **Zapier**, **Zoho Flow**, serverless automation with Cloudflare Workers, API-driven orchestration.",
   },
   {
     title: "Data, Cloud & DevOps",
@@ -108,24 +108,24 @@ const howIWork: { icon: IconName; title: string; text: string; tag: string }[] =
   {
     icon: "search",
     title: "Understand the problem",
-    text: "Clarify requirements, constraints, and the outcome the software needs to achieve.",
+    text: "Define requirements, constraints, and the outcome the software needs to achieve.",
     tag: "REQUIREMENTS",
   },
   {
     icon: "layers",
-    title: "Design for maintainability",
+    title: "Design maintainable systems",
     text: "Choose appropriate technologies, define system boundaries, and keep components understandable.",
     tag: "ARCHITECTURE",
   },
   {
     icon: "code",
-    title: "Build and integrate",
+    title: "Build & integrate APIs/data",
     text: "Develop the application, connect APIs and external services, and handle real-world data and failure scenarios.",
     tag: "APIS + DATA",
   },
   {
     icon: "check",
-    title: "Test and deliver",
+    title: "Test, deploy, and improve",
     text: "Validate functionality, troubleshoot issues, support deployment, and improve the solution based on results.",
     tag: "QA + RELEASE",
   },
@@ -279,27 +279,14 @@ export default function Home() {
                   <span>to production-ready.</span>
                 </h2>
                 <p className="about-copy">
-                  I build software that connects people, data, and business processes. My work
-                  spans full stack application development, backend systems, WordPress and
-                  e-commerce platforms, cloud technologies, third-party integrations, and
-                  practical AI automation.
+                  I work across the software lifecycle: understanding the problem, shaping a
+                  maintainable solution, building the product, and supporting it in production. My
+                  background spans full stack engineering, WordPress and e-commerce, cloud
+                  platforms, integrations, and practical AI automation.
                 </p>
                 <p className="about-copy">
-                  Over the course of my career, I&apos;ve worked with distributed teams and
-                  international clients across diverse technical environments; from developing
-                  custom web applications and APIs to connecting business systems and improving
-                  operational workflows.
-                </p>
-                <p className="about-copy">
-                  I enjoy the engineering work behind the interface: designing APIs, structuring
-                  data, troubleshooting integrations, improving reliability, and making sure the
-                  pieces of a system work together.
-                </p>
-                <p className="about-copy">
-                  My approach is practical and ownership-driven. I aim to understand the problem
-                  before choosing the tools, keep implementations maintainable, and deliver
-                  solutions that can be tested, deployed, and supported beyond the initial
-                  release.
+                  I enjoy making complex systems work together and turning repetitive processes
+                  into reliable, useful tools for the people who depend on them.
                 </p>
               </div>
             </div>
@@ -312,7 +299,11 @@ export default function Home() {
                 {skills.map((skill) => (
                   <article className="skill-card" key={skill.title}>
                     <h3>{skill.title}</h3>
-                    <p>{skill.tools}</p>
+                    <p>
+                      {skill.tools.split("**").map((part, i) =>
+                        i % 2 === 1 ? <strong key={i}>{part}</strong> : part,
+                      )}
+                    </p>
                   </article>
                 ))}
               </div>
