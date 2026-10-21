@@ -368,12 +368,14 @@ export default function Home() {
                 business-critical web platforms.
               </p>
               <Timeline roles={experience} />
-              <StepsPanel
-                label="HOW I APPROACH ENGINEERING"
-                heading="Principles behind the work."
-                items={approach}
-              />
             </div>
+          </div>
+          <div className="page-wrap">
+            <StepsPanel
+              label="HOW I APPROACH ENGINEERING"
+              heading="Principles behind the work."
+              items={approach}
+            />
           </div>
         </section>
 
