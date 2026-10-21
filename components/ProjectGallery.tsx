@@ -14,6 +14,7 @@ const projects = [
     siteName: "shamsfz.ae",
     image: "/projects/shams.jpg",
     href: "https://shamsfz.ae/",
+    caseStudyUrl: "/work/shams-free-zone",
     details:
       "A multilingual WordPress site built with Elementor that presents free zone licensing, business activities and visa options, with a focus on clear conversion paths for founders setting up a company online.",
   },
@@ -28,6 +29,7 @@ const projects = [
     siteName: "runyourtask.com",
     image: "/projects/runyourtask.jpg",
     href: "https://runyourtask.com/",
+    caseStudyUrl: "/work/run-your-task",
     details:
       "A services website that lets customers request a quote through a contact form or reach the team directly on WhatsApp, making it easy for people abroad to get tasks done in Kenya.",
   },
@@ -41,6 +43,7 @@ const projects = [
     art: "project-art-automation",
     image: "/projects/ai.jpg",
     artLabel: "AI / AUTOMATION",
+    caseStudyUrl: "/work/ai-workflow-automation",
     details:
       "Designed integrations around real operational handoffs, using APIs and webhooks to move information between business systems. The focus was to reduce repetitive work while keeping the workflows maintainable and reviewable.",
   },
@@ -82,6 +85,7 @@ const projects = [
     art: "project-art-admin",
     image: "/projects/admin.jpg",
     artLabel: "LARAVEL / REACT",
+    caseStudyUrl: "/work/mable-admin",
     details:
       "Worked on company and user profile capabilities, keeping frontend presentation separate from backend business logic through an API-based integration.",
   },
@@ -94,6 +98,7 @@ const projects = [
     art: "project-art-land",
     image: "/projects/land.jpg",
     artLabel: "DJANGO / POSTGIS",
+    caseStudyUrl: "/work/land-quality-api",
     details:
       "Built around structured data management and spatial database capabilities, applying backend engineering and PostgreSQL/PostGIS integration to a geospatial use case.",
   },
@@ -106,6 +111,7 @@ const projects = [
     art: "project-art-forecast",
     image: "/projects/forecast.jpg",
     artLabel: "CLOUD / SECURITY",
+    caseStudyUrl: "/work/secure-financial-forecasting",
     details:
       "Applied cloud and network security principles to a full-stack financial forecasting application, with distinct roles for administrators and investors.",
   },
@@ -257,6 +263,11 @@ export default function ProjectGallery() {
             <details className="project-details">
               <summary>Project details <span aria-hidden="true">＋</span></summary>
               <p>{project.details}</p>
+              {project.caseStudyUrl && (
+                <a className="project-visit" href={project.caseStudyUrl}>
+                  Read the engineering case study →
+                </a>
+              )}
               {project.highlights && (
                 <>
                   <h4 className="project-detail-heading">Engineering highlights</h4>
