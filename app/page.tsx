@@ -77,11 +77,33 @@ function StepsPanel({
   label,
   heading,
   items,
+  variant = "columns",
 }: {
   label: string;
   heading: string;
   items: { icon: IconName; title: string; text: string; tag: string }[];
+  variant?: "columns" | "flow";
 }) {
+  if (variant === "flow") {
+    return (
+      <div className="flow-panel">
+        <p className="eyebrow">{label}</p>
+        <h3>{heading}</h3>
+        <div className="flow-grid">
+          {items.map((item, index) => (
+            <article className={`flow-step flow-tone-${index % 4}`} key={item.title}>
+              <span className="flow-icon">
+                <StepIcon name={item.icon} />
+              </span>
+              <h4>{item.title}</h4>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="steps-panel">
       <div className="steps-intro">
@@ -308,7 +330,12 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <StepsPanel label="HOW I WORK" heading="A clear process, from idea to release." items={howIWork} />
+            <StepsPanel
+              variant="flow"
+              label="HOW I WORK"
+              heading="A clear process, from idea to release."
+              items={howIWork}
+            />
           </div>
         </section>
 
