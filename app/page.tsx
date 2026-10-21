@@ -28,7 +28,7 @@ const skills = [
   {
     title: "AI Systems & Automation",
     tools:
-      "LLM API integrations, AI-assisted development, workflow automation, webhooks, CRM integrations, Python/Node.js automation, **n8n**, **Make.com**, **Zapier**, **Zoho Flow**, serverless automation with Cloudflare Workers, API-driven orchestration.",
+      "LLM API integrations, AI-assisted development, workflow automation, webhooks, CRM integrations, Python/Node.js automation, n8n, Make.com, Zapier, Zoho Flow.",
   },
   {
     title: "Data, Cloud & DevOps",
