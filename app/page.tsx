@@ -409,10 +409,10 @@ export default function Home() {
         <section className="contact section-pad" id="contact">
           <div className="page-wrap contact-inner">
             <p className="eyebrow section-label">05 / CAREER OPPORTUNITIES</p>
-            <h2>
+            <h2 className="career-heading">
               Let&apos;s build
               <br />
-              something meaningful.
+              <span>something meaningful.</span>
             </h2>
             <p>
               I&apos;m seeking a <strong>full-time, long-term role</strong> where I can
