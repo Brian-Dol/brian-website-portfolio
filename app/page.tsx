@@ -1,5 +1,6 @@
 import ApiStatus from "@/components/ApiStatus";
 import Chatbot from "@/components/Chatbot";
+import ContactForm from "@/components/ContactForm";
 import { CV_URL } from "@/lib/profile";
 import ProjectGallery from "@/components/ProjectGallery";
 import SiteHeader from "@/components/SiteHeader";
@@ -432,6 +433,10 @@ export default function Home() {
                 and grows with your team, I&apos;d welcome the conversation.
               </strong>
             </p>
+            <div className="contact-form-wrap">
+              <p className="eyebrow">SEND A MESSAGE</p>
+              <ContactForm />
+            </div>
             <dl className="contact-details">
               <div>
                 <dt>EMAIL</dt>
