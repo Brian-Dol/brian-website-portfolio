@@ -25,9 +25,9 @@ EDUCATION
 
 SKILLS
 - Frontend: React, Next.js, Vue, Nuxt, Angular, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Redux, Context API, responsive and component-based UI.
-- Backend: PHP, Laravel, Node.js, NestJS, Python, Django, Flask, FastAPI, Java, Spring Boot, REST, GraphQL, microservices, serverless, WebSockets.
+- Backend: PHP, Laravel (Filament, Livewire, Sanctum, Fortify), Node.js, NestJS, Python, Django, Django REST Framework, Flask, FastAPI, Java, Spring Boot, REST, GraphQL, microservices, serverless, WebSockets, scheduled jobs and PDF/report generation.
 - Databases: PostgreSQL, MySQL, MongoDB, Redis, SQL, data modeling, query optimization, indexing, caching.
-- APIs and integrations: REST, GraphQL, webhooks, OAuth, JWT, API authentication, third-party, CRM, payment and messaging APIs.
+- APIs and integrations: REST, GraphQL, webhooks, OAuth, JWT, API authentication, third-party, CRM, messaging and payment APIs including M-Pesa mobile money.
 - WordPress and web development: WordPress, WooCommerce, Elementor, Gutenberg, WPGraphQL, WP-CLI, custom plugins, themes and post types, Roots/Sage, Bedrock, Trellis, Shopify, Magento/Adobe Commerce, BigCommerce. Applies SEO, performance, accessibility and analytics in every build.
 - Cloud and DevOps: AWS (EC2, ECS/Fargate, S3, CloudFront, Lambda), Azure, GCP, DigitalOcean, Docker, Kubernetes, Terraform, Linux, Cloudflare, GitHub Actions, CI/CD.
 - Testing and QA: Playwright, Cypress, Jest, PHPUnit, Selenium, PyTest, API, integration and regression testing, code review.
@@ -47,9 +47,9 @@ SELECTED WORK
 - Shams Free Zone website (shamsfz.ae): custom-built multilingual WordPress site with custom themes and plugins (Elementor, WPML) for Sharjah's digital-first free zone.
 - Run Your Task (runyourtask.com): services platform for Kenyans worldwide with quote requests and WhatsApp contact.
 - AI workflow automation: connected LLM APIs, backend services, CRMs and business systems to reduce recurring manual work by 70%+.
-- mAble Admin: backend and API work for company and user profile features in a Laravel 12, React and TypeScript product.
-- Land Quality API: Django, PostgreSQL and PostGIS API for structured land-quality and geospatial data.
-- Secure financial forecasting: cloud-based forecasting capstone (React, Django/FastAPI, PostgreSQL, AWS) with separate administrator and investor roles, RBAC, TLS, IAM controls, cloud monitoring and external financial data APIs.
+- mAble AI Automation Platform: backend, API and LLM-integration work on an employer-owned, multi-tenant product (Laravel 12 admin with React/TypeScript, Inertia, Sanctum/Fortify, two-factor auth, company isolation, invitations, activity log; plus an Electron and React desktop client that generates automation tools via OpenAI). Source code is private. Automation reduced manual workload by 70%+.
+- Land Quality API: Django REST APIs with JWT for owners, land parcels and quality assessments (pH, moisture, nutrients, score), plus a coordinate-based analysis service on PostgreSQL/PostGIS, Docker and GitHub Actions. The geospatial retrieval step is a prototype with placeholder values.
+- Secure stock forecasting platform (MSc capstone): React dashboard with Chart.js, Node/Express API with bcrypt, JWT and role-protected admin routes on MongoDB, and a Flask service using yfinance and a scikit-learn linear regression baseline, orchestrated with Docker Compose.
 - AI-powered SaaS and automation platform: multi-tenant Java/Spring Boot and Node.js backend on PostgreSQL and AWS with LLM-powered workflows and automated reports.
 - Real-time distributed systems: Node.js/NestJS, WebSockets, Kafka, Redis and PostgreSQL for event-driven, low-latency applications.
 - WordPress and e-commerce platforms: production WordPress/WooCommerce sites using Gutenberg, Elementor, WPGraphQL, WP-CLI, Roots/Sage, Bedrock and Trellis, with SEO, performance and conversion focus.

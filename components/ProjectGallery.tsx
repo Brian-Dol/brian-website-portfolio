@@ -77,43 +77,43 @@ const projects = [
     caseStudyUrl: "/work/ai-powered-portfolio",
   },
   {
-    title: "mAble Admin",
+    title: "mAble AI Automation Platform",
     category: "Full-stack applications",
     description:
-      "Contributed backend and API functionality for company and user profile features in a React and TypeScript product.",
-    technologies: ["LARAVEL 12", "REACT", "TYPESCRIPT"],
+      "Backend, API and AI-integration work on a multi-tenant platform where teams generate and run custom automation tools.",
+    technologies: ["LARAVEL 12", "REACT", "TYPESCRIPT", "OPENAI", "ELECTRON"],
     art: "project-art-admin",
     image: "/projects/admin.jpg",
-    artLabel: "LARAVEL / REACT",
+    artLabel: "LARAVEL / REACT / AI",
     caseStudyUrl: "/work/mable-admin",
     details:
-      "Worked on company and user profile capabilities, keeping frontend presentation separate from backend business logic through an API-based integration.",
+      "An AI-powered product made of a Laravel 12 and React/TypeScript admin application and an Electron and React desktop client that turns plain-language requests into runnable automation tools. I worked on company and user profile APIs, authenticated integrations, and LLM-powered workflows, helping reduce manual workload by 70%+.",
   },
   {
     title: "Land Quality API",
     category: "Data & geospatial",
     description:
-      "A data-focused API project for structured land-quality information and geospatial functionality.",
-    technologies: ["DJANGO", "POSTGRESQL", "POSTGIS"],
+      "Django REST APIs for land records, quality assessments and coordinate-based geospatial analysis, secured with JWT.",
+    technologies: ["DJANGO REST", "POSTGIS", "JWT", "DOCKER", "GITHUB ACTIONS"],
     art: "project-art-land",
     image: "/projects/land.jpg",
     artLabel: "DJANGO / POSTGIS",
     caseStudyUrl: "/work/land-quality-api",
     details:
-      "Built around structured data management and spatial database capabilities, applying backend engineering and PostgreSQL/PostGIS integration to a geospatial use case.",
+      "Modelled owners, land parcels and quality assessments (pH, moisture, nutrients, score) behind JWT-protected REST endpoints, and designed a coordinate-based analysis service on PostgreSQL/PostGIS, containerised with Docker and wired to a GitHub Actions pipeline.",
   },
   {
-    title: "Secure financial forecasting",
-    category: "Cloud & security",
+    title: "Secure stock forecasting platform",
+    category: "Full-stack applications",
     description:
-      "Cloud-based forecasting capstone with separate administrative and investor roles.",
-    technologies: ["REACT", "DJANGO", "POSTGRESQL"],
+      "MSc capstone: React, Node.js and Flask platform for stock forecasts with JWT authentication and separate admin and investor roles.",
+    technologies: ["REACT", "NODE.JS", "FLASK", "MONGODB", "SCIKIT-LEARN", "DOCKER"],
     art: "project-art-forecast",
     image: "/projects/forecast.jpg",
-    artLabel: "CLOUD / SECURITY",
+    artLabel: "REACT / FLASK ML",
     caseStudyUrl: "/work/secure-financial-forecasting",
     details:
-      "Applied cloud and network security principles to a full-stack financial forecasting application, with distinct roles for administrators and investors.",
+      "A multi-service application: a React dashboard with Chart.js, a Node/Express API with bcrypt and JWT authentication and role-protected admin routes on MongoDB, and a Flask service using yfinance market data and a scikit-learn model, orchestrated with Docker Compose.",
   },
 ];
 

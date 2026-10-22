@@ -19,7 +19,7 @@ const skills = [
   {
     title: "Backend Engineering & APIs",
     tools:
-      "PHP, Laravel, Node.js, NestJS, Python, Django, Flask, FastAPI, Java, Spring Boot, C#/.NET, REST APIs, GraphQL.",
+      "PHP, Laravel, Filament, Livewire, Node.js, Express, NestJS, Python, Django, Django REST Framework, Flask, FastAPI, Java, Spring Boot, C#/.NET, REST APIs, GraphQL, M-Pesa and payment integrations, PDF reporting.",
   },
   {
     title: "CMS & E-commerce",
@@ -34,7 +34,7 @@ const skills = [
   {
     title: "Data, Cloud & DevOps",
     tools:
-      "PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, PostGIS, Kafka, RabbitMQ, WebSockets, AWS, Azure, Google Cloud, Docker, Kubernetes, Terraform, CI/CD, GitHub Actions.",
+      "PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, PostGIS, Kafka, RabbitMQ, WebSockets, AWS, Azure, Google Cloud, Docker, Docker Compose, Kubernetes, Terraform, CI/CD, GitHub Actions.",
   },
   {
     title: "Quality, Security & Delivery",
