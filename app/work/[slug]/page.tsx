@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 import SiteHeader from "@/components/SiteHeader";
+import { architectureDiagrams } from "@/lib/architectureDiagrams";
 import { projectCaseStudies } from "@/lib/projectCaseStudies";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -25,6 +27,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
   const { slug } = await params;
   const project = projectCaseStudies.find((item) => item.slug === slug);
   if (!project) notFound();
+  const diagram = architectureDiagrams[project.slug];
 
   return (
     <>
@@ -61,8 +64,18 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           </div>
         </section>
 
+        {diagram && (
+          <section className="case-section">
+            <p className="eyebrow">02 / ARCHITECTURE</p>
+            <div className="case-content">
+              <h2>How it fits together</h2>
+              <ArchitectureDiagram diagram={diagram} />
+            </div>
+          </section>
+        )}
+
         <section className="case-section">
-          <p className="eyebrow">02 / CONTRIBUTION</p>
+          <p className="eyebrow">03 / CONTRIBUTION</p>
           <div className="case-content">
             <h2>My contribution</h2>
             <ul className="case-list">
@@ -74,7 +87,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
         </section>
 
         <section className="case-section">
-          <p className="eyebrow">03 / ENGINEERING</p>
+          <p className="eyebrow">04 / ENGINEERING</p>
           <div className="case-content">
             <h2>Engineering notes</h2>
             <ul className="case-list">
@@ -87,7 +100,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 
         {project.outcomes && (
           <section className="case-section">
-            <p className="eyebrow">04 / OUTCOMES</p>
+            <p className="eyebrow">05 / OUTCOMES</p>
             <div className="case-content">
               <h2>Outcomes and context</h2>
               <ul className="case-list">
