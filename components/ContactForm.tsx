@@ -49,7 +49,7 @@ export default function ContactForm() {
       setStatus({
         type: "success",
         text: AUTO_REPLY_URL
-          ? "Thanks for reaching out. Your message has been sent, and a confirmation email is on its way."
+          ? "Thanks for reaching out. Your message has been sent, and a confirmation email is on its way. If you don't see it, please check your spam folder."
           : "Thanks for reaching out. Your message has been sent successfully.",
       });
     } catch {

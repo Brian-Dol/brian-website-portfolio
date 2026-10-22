@@ -459,9 +459,6 @@ export default function Home() {
                     </dd>
                   </div>
                 </dl>
-                <a className="contact-button" href="mailto:dol.brian23@gmail.com">
-                  Discuss a Full-Time Opportunity <span aria-hidden="true">↗</span>
-                </a>
                 <a className="contact-email" href={CV_URL} target="_blank" rel="noopener noreferrer">
                   Download My CV ↓
                 </a>
