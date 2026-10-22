@@ -3,6 +3,9 @@
 import { FormEvent, useState } from "react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdeaqwle";
+// Google Apps Script web app that emails an automatic confirmation (see scripts/auto-reply.gs).
+const AUTO_REPLY_URL =
+  "https://script.google.com/macros/s/AKfycbyzCPSGzfp6hJMcKrMW4qjwnm0L3qCfnesA39GwKYBqkJEGH5sihGFwTQF0Fb4ANeQ_7w/exec";
 
 export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
@@ -17,9 +20,10 @@ export default function ContactForm() {
     setStatus(null);
 
     try {
+      const formData = new FormData(form);
       const response = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        body: new FormData(form),
+        body: formData,
         headers: { Accept: "application/json" },
       });
 
@@ -31,10 +35,22 @@ export default function ContactForm() {
         return;
       }
 
+      if (AUTO_REPLY_URL) {
+        const params = new URLSearchParams();
+        for (const field of ["name", "email", "subject", "_gotcha"]) {
+          params.set(field, String(formData.get(field) ?? ""));
+        }
+        void fetch(AUTO_REPLY_URL, { method: "POST", mode: "no-cors", body: params }).catch(
+          () => undefined,
+        );
+      }
+
       form.reset();
       setStatus({
         type: "success",
-        text: "Thanks for reaching out. Your message has been sent successfully.",
+        text: AUTO_REPLY_URL
+          ? "Thanks for reaching out. Your message has been sent, and a confirmation email is on its way."
+          : "Thanks for reaching out. Your message has been sent successfully.",
       });
     } catch {
       setStatus({
