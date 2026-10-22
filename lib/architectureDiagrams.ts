@@ -257,10 +257,10 @@ export const architectureDiagrams: Record<string, ArchDiagram> = {
       },
       {
         id: "wp",
-        label: "WordPress + Elementor",
+        label: "Custom WordPress theme & plugins",
         tag: "CMS",
         layer: 2,
-        description: "The multilingual CMS experience, with WPML-based language support and SEO work.",
+        description: "A custom-built WordPress implementation with custom themes and plugins, plus Elementor and WPML-based multilingual support and SEO work.",
         to: ["crm", "analytics"],
       },
       {

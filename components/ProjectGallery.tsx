@@ -8,7 +8,7 @@ const projects = [
     category: "Websites & e-commerce",
     description:
       "Corporate website for Shams, Sharjah's digital-first free zone, helping businesses set up a UAE company fully online.",
-    technologies: ["WORDPRESS", "ELEMENTOR", "WPML", "SEO"],
+    technologies: ["WORDPRESS", "CUSTOM THEMES", "CUSTOM PLUGINS", "ELEMENTOR", "WPML", "SEO"],
     art: "project-art-site",
     artLabel: "WORDPRESS / MULTILINGUAL",
     siteName: "shamsfz.ae",
@@ -16,7 +16,7 @@ const projects = [
     href: "https://shamsfz.ae/",
     caseStudyUrl: "/work/shams-free-zone",
     details:
-      "A multilingual WordPress site built with Elementor that presents free zone licensing, business activities and visa options, with a focus on clear conversion paths for founders setting up a company online.",
+      "A custom-built multilingual WordPress site with custom themes and plugins, using Elementor, that presents free zone licensing, business activities and visa options, with a focus on clear conversion paths for founders setting up a company online.",
   },
   {
     title: "Run Your Task",

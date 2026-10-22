@@ -18,11 +18,11 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     title: "Shams Free Zone website",
     strapline: "A multilingual digital experience for business setup in Sharjah.",
     category: "Websites & e-commerce",
-    technologies: ["WordPress", "Elementor", "WPML", "SEO", "Zoho Flow", "CRM/API integrations"],
+    technologies: ["WordPress", "Custom themes", "Custom plugins", "Elementor", "WPML", "SEO", "Zoho Flow", "CRM/API integrations"],
     overview:
-      "A production website presenting free zone licensing, business activities, and visa options, with clear paths for founders looking to set up a UAE company online.",
+      "A custom-built production website with custom themes and plugins, presenting free zone licensing, business activities, and visa options, with clear paths for founders looking to set up a UAE company online.",
     contribution: [
-      "Developed and maintained WordPress and Elementor experiences in English, German, Russian, and Arabic.",
+      "Built and maintained custom WordPress themes and plugins, with Elementor experiences in English, German, Russian, and Arabic.",
       "Supported CRM integrations, API and webhook workflows, forms, analytics, SEO, and marketing technology.",
       "Migrated startwith.shams.ae to shamsfz.ae, coordinating domain, DNS, SSL, Cloudflare, and application configuration.",
       "Supported WooCommerce, payment integrations, GA4, Google Tag Manager, and Search Console.",

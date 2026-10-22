@@ -44,7 +44,7 @@ AUTOMATION EXPERIENCE
 - Workflow architecture: maps business processes, finds automation opportunities, designs scalable workflows, debugs failures, optimizes performance and latency, and unifies legacy systems with modern platforms.
 
 SELECTED WORK
-- Shams Free Zone website (shamsfz.ae): multilingual WordPress/Elementor site for Sharjah's digital-first free zone.
+- Shams Free Zone website (shamsfz.ae): custom-built multilingual WordPress site with custom themes and plugins (Elementor, WPML) for Sharjah's digital-first free zone.
 - Run Your Task (runyourtask.com): services platform for Kenyans worldwide with quote requests and WhatsApp contact.
 - AI workflow automation: connected LLM APIs, backend services, CRMs and business systems to reduce recurring manual work by 70%+.
 - mAble Admin: backend and API work for company and user profile features in a Laravel 12, React and TypeScript product.
