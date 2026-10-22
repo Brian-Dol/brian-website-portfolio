@@ -28,6 +28,14 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
   const project = projectCaseStudies.find((item) => item.slug === slug);
   if (!project) notFound();
   const diagram = architectureDiagrams[project.slug];
+  const n = (value: number) => String(value).padStart(2, "0");
+  let section = 1;
+  const overviewNo = section++;
+  const diagramNo = diagram ? section++ : 0;
+  const contributionNo = section++;
+  const engineeringNo = section++;
+  const limitationsNo = project.limitations ? section++ : 0;
+  const outcomesNo = project.outcomes ? section++ : 0;
 
   return (
     <>
@@ -52,12 +60,27 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                 Explore the live project ↗
               </a>
             )}
+            {project.sourceUrl && (
+              <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
+                View source on GitHub ↗
+              </a>
+            )}
             <Link href="/#work">Back to all selected work ↓</Link>
           </div>
+          {project.facts && (
+            <dl className="case-facts">
+              {project.facts.map((fact) => (
+                <div key={fact.label}>
+                  <dt>{fact.label}</dt>
+                  <dd>{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
         </header>
 
         <section className="case-section">
-          <p className="eyebrow">01 / OVERVIEW</p>
+          <p className="eyebrow">{n(overviewNo)} / OVERVIEW</p>
           <div className="case-content">
             <h2>The project</h2>
             <p>{project.overview}</p>
@@ -66,7 +89,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 
         {diagram && (
           <section className="case-section">
-            <p className="eyebrow">02 / ARCHITECTURE</p>
+            <p className="eyebrow">{n(diagramNo)} / ARCHITECTURE</p>
             <div className="case-content">
               <h2>How it fits together</h2>
               <ArchitectureDiagram diagram={diagram} />
@@ -75,7 +98,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
         )}
 
         <section className="case-section">
-          <p className="eyebrow">03 / CONTRIBUTION</p>
+          <p className="eyebrow">{n(contributionNo)} / CONTRIBUTION</p>
           <div className="case-content">
             <h2>My contribution</h2>
             <ul className="case-list">
@@ -87,7 +110,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
         </section>
 
         <section className="case-section">
-          <p className="eyebrow">04 / ENGINEERING</p>
+          <p className="eyebrow">{n(engineeringNo)} / ENGINEERING</p>
           <div className="case-content">
             <h2>Engineering notes</h2>
             <ul className="case-list">
@@ -98,9 +121,23 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           </div>
         </section>
 
+        {project.limitations && (
+          <section className="case-section">
+            <p className="eyebrow">{n(limitationsNo)} / LIMITATIONS</p>
+            <div className="case-content">
+              <h2>Limitations and next steps</h2>
+              <ul className="case-list">
+                {project.limitations.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
         {project.outcomes && (
           <section className="case-section">
-            <p className="eyebrow">05 / OUTCOMES</p>
+            <p className="eyebrow">{n(outcomesNo)} / OUTCOMES</p>
             <div className="case-content">
               <h2>Outcomes and context</h2>
               <ul className="case-list">

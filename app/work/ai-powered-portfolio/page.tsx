@@ -8,6 +8,10 @@ const sourceUrl = "https://github.com/Brian-Dol/brian-website-portfolio";
 
 const decisions = [
   {
+    title: "Add a free contact path with an automatic reply.",
+    text: "The contact form posts to Formspree, and a small Google Apps Script sends an acknowledgement email with a per-address cooldown, avoiding a paid service.",
+  },
+  {
     title: "Keep the architecture proportionate to the problem.",
     text: "A curated system prompt is sufficient for a relatively small, stable professional knowledge base. A retrieval pipeline would add complexity without necessarily providing a meaningful benefit at this stage.",
   },
@@ -31,6 +35,7 @@ const limitations = [
   "AI responses are not streamed.",
   "Chat accessibility can be improved, including keyboard navigation and focus management.",
   "The chatbot's origin check is a basic browser-request guard, not authentication or complete abuse prevention.",
+  "The contact form's automatic acknowledgement is sent from a free Google Apps Script, so it can land in the sender's spam folder.",
 ];
 
 const nextSteps = [

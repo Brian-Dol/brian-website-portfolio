@@ -2573,6 +2573,29 @@ h2 span {
   color: var(--accent);
 }
 
+.case-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px 30px;
+  margin: 40px 0 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
+.case-facts dt {
+  color: var(--body-muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-facts dd {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 14px;
+}
+
 .case-section {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) 2fr;

@@ -93,27 +93,71 @@ const projects = [
     title: "Land Quality API",
     category: "Data & geospatial",
     description:
-      "Django REST APIs for land records, quality assessments and coordinate-based geospatial analysis, secured with JWT.",
-    technologies: ["DJANGO REST", "POSTGIS", "JWT", "DOCKER", "GITHUB ACTIONS"],
+      "A JWT-secured Django REST API for land owners, parcels and soil-quality assessments, backed by PostgreSQL.",
+    technologies: ["DJANGO", "DRF", "SIMPLEJWT", "POSTGRESQL", "DOCKER COMPOSE"],
     art: "project-art-land",
     image: "/projects/land.jpg",
-    artLabel: "DJANGO / POSTGIS",
+    artLabel: "DJANGO / POSTGRESQL",
+    sourceUrl: "https://github.com/Brian-Dol/land-quality-api",
     caseStudyUrl: "/work/land-quality-api",
     details:
-      "Modelled owners, land parcels and quality assessments (pH, moisture, nutrients, score) behind JWT-protected REST endpoints, and designed a coordinate-based analysis service on PostgreSQL/PostGIS, containerised with Docker and wired to a GitHub Actions pipeline.",
+      "Modelled owners, land parcels and quality assessments (pH, moisture, nutrients, score) behind JWT-protected REST endpoints on PostgreSQL, with a Docker Compose stack and environment-based configuration.",
   },
   {
     title: "Secure stock forecasting platform",
     category: "Full-stack applications",
     description:
       "MSc capstone: React, Node.js and Flask platform for stock forecasts with JWT authentication and separate admin and investor roles.",
-    technologies: ["REACT", "NODE.JS", "FLASK", "MONGODB", "SCIKIT-LEARN", "DOCKER"],
+    technologies: ["REACT", "NODE.JS", "EXPRESS", "FLASK", "MONGODB", "SCIKIT-LEARN"],
     art: "project-art-forecast",
     image: "/projects/forecast.jpg",
     artLabel: "REACT / FLASK ML",
+    sourceUrl: "https://github.com/Brian-Dol/stock-prediction-platform",
     caseStudyUrl: "/work/secure-financial-forecasting",
     details:
-      "A multi-service application: a React dashboard with Chart.js, a Node/Express API with bcrypt and JWT authentication and role-protected admin routes on MongoDB, and a Flask service using yfinance market data and a scikit-learn model, orchestrated with Docker Compose.",
+      "A multi-service application: a React dashboard with Chart.js, a Node/Express API with bcrypt and JWT authentication and role-protected admin routes on MongoDB, and a Flask service that fetches yfinance market data. A scikit-learn baseline is included but not yet wired into the prediction route.",
+  },
+  {
+    title: "Restaurant Reservation System",
+    category: "Business applications",
+    description:
+      "A Laravel app where guests book a table in two steps and staff manage menus, tables and reservations.",
+    technologies: ["LARAVEL 9", "PHP 8", "BREEZE", "TAILWIND", "ALPINE.JS", "MYSQL"],
+    art: "project-art-site",
+    artLabel: "LARAVEL / BOOKINGS",
+    siteName: "reservations",
+    sourceUrl: "https://github.com/Brian-Dol/Restaurant-Reservation-System-Laravel",
+    caseStudyUrl: "/work/restaurant-reservation-system",
+    details:
+      "Guests browse the menu and reserve from tables that are free for their date, time and party size, with booking rules enforced on the server. An admin panel manages categories, menus with images, tables and reservations. Online payments are not implemented.",
+  },
+  {
+    title: "Employee Management System",
+    category: "Business applications",
+    description:
+      "A Laravel and Splade admin for employee records, locations, and role-based access.",
+    technologies: ["LARAVEL 10", "SPLADE", "VUE 3", "TAILWIND", "SPATIE PERMISSION", "MYSQL"],
+    art: "project-art-admin",
+    artLabel: "LARAVEL / SPLADE",
+    sourceUrl: "https://github.com/Brian-Dol/Employee-management-system-Laravel",
+    caseStudyUrl: "/work/employee-management-system",
+    details:
+      "Searchable, sortable tables and forms for employees, departments, countries, states and cities, plus user, role and permission management. The whole admin area is restricted to the admin role.",
+  },
+  {
+    title: "Carbon Tracker",
+    category: "Full-stack applications",
+    description:
+      "A compact Vue 3 and Express app for logging daily energy use, with JWT authentication and SQLite.",
+    technologies: ["VUE 3", "VITE", "EXPRESS 5", "SQLITE", "JWT", "BCRYPT"],
+    art: "project-art-forecast",
+    artLabel: "VUE / EXPRESS",
+    chartTop: "ENERGY LOG",
+    chartBottom: "KWH PER DAY",
+    sourceUrl: "https://github.com/Brian-Dol/carbon-tracker",
+    caseStudyUrl: "/work/carbon-tracker",
+    details:
+      "Users register, sign in and keep a personal history of daily kWh readings. Passwords are hashed, tokens expire after two hours, and every query is scoped to the signed-in user. CO2 conversion and charts are not implemented yet.",
   },
 ];
 
@@ -196,7 +240,7 @@ export default function ProjectGallery() {
               )}
               {project.art === "project-art-forecast" && !project.image && (
                 <div className="forecast-panel">
-                  <span className="forecast-label">FORECAST</span>
+                  <span className="forecast-label">{project.chartTop ?? "FORECAST"}</span>
                   <svg viewBox="0 0 300 150" role="presentation">
                     <path className="chart-grid" d="M0 30H300M0 75H300M0 120H300" />
                     <path
@@ -205,7 +249,7 @@ export default function ProjectGallery() {
                     />
                     <circle cx="295" cy="24" r="5" />
                   </svg>
-                  <span className="forecast-label">SCENARIO → OUTLOOK</span>
+                  <span className="forecast-label">{project.chartBottom ?? "SCENARIO → OUTLOOK"}</span>
                 </div>
               )}
               {project.image && (
@@ -296,6 +340,11 @@ export default function ProjectGallery() {
                     View source code on GitHub ↗
                   </a>
                 </div>
+              )}
+              {!project.liveUrl && project.sourceUrl && (
+                <a className="project-visit" href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
+                  View source code on GitHub ↗
+                </a>
               )}
               {project.href && (
                 <a className="project-visit" href={project.href} target="_blank" rel="noopener noreferrer">
