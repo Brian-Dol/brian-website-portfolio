@@ -101,7 +101,7 @@ const projects = [
     sourceUrl: "https://github.com/Brian-Dol/land-quality-api",
     caseStudyUrl: "/work/land-quality-api",
     details:
-      "Modelled owners, land parcels and quality assessments (pH, moisture, nutrients, score) behind JWT-protected REST endpoints on PostgreSQL, with a Docker Compose stack and environment-based configuration.",
+      "Modelled owners, land parcels and quality assessments (pH, moisture, nutrients, score) behind JWT-protected REST endpoints on PostgreSQL, with a Docker Compose stack. Later used by a company that sells land in Kenya; the public repository holds the base project and the client-modified components are privately owned.",
   },
   {
     title: "Secure stock forecasting platform",
@@ -115,7 +115,7 @@ const projects = [
     sourceUrl: "https://github.com/Brian-Dol/stock-prediction-platform",
     caseStudyUrl: "/work/secure-financial-forecasting",
     details:
-      "A multi-service application: a React dashboard with Chart.js, a Node/Express API with bcrypt and JWT authentication and role-protected admin routes on MongoDB, and a Flask service that fetches yfinance market data. A scikit-learn baseline is included but not yet wired into the prediction route.",
+      "A multi-service application: a React dashboard with Chart.js, a Node/Express API with bcrypt and JWT authentication and role-protected admin routes on MongoDB, and a Flask service that fetches yfinance market data. Began as an MSc capstone and was later transformed into a client project; the public repository holds the MSc base project and the client-modified components are privately owned.",
   },
   {
     title: "Restaurant Reservation System",
@@ -124,12 +124,13 @@ const projects = [
       "A Laravel app where guests book a table in two steps and staff manage menus, tables and reservations.",
     technologies: ["LARAVEL 9", "PHP 8", "BREEZE", "TAILWIND", "ALPINE.JS", "MYSQL"],
     art: "project-art-site",
+    image: "/projects/restaurant.jpg",
     artLabel: "LARAVEL / BOOKINGS",
     siteName: "reservations",
     sourceUrl: "https://github.com/Brian-Dol/Restaurant-Reservation-System-Laravel",
     caseStudyUrl: "/work/restaurant-reservation-system",
     details:
-      "Guests browse the menu and reserve from tables that are free for their date, time and party size, with booking rules enforced on the server. An admin panel manages categories, menus with images, tables and reservations. Online payments are not implemented.",
+      "Guests browse the menu and reserve from tables that are free for their date, time and party size, with booking rules enforced on the server. An admin panel manages categories, menus with images, tables and reservations. Produced for a small chain of restaurants in the UAE; the public repository holds the base project and the client-modified components are privately owned.",
   },
   {
     title: "Employee Management System",
@@ -138,11 +139,12 @@ const projects = [
       "A Laravel and Splade admin for employee records, locations, and role-based access.",
     technologies: ["LARAVEL 10", "SPLADE", "VUE 3", "TAILWIND", "SPATIE PERMISSION", "MYSQL"],
     art: "project-art-admin",
+    image: "/projects/employee.png",
     artLabel: "LARAVEL / SPLADE",
     sourceUrl: "https://github.com/Brian-Dol/Employee-management-system-Laravel",
     caseStudyUrl: "/work/employee-management-system",
     details:
-      "Searchable, sortable tables and forms for employees, departments, countries, states and cities, plus user, role and permission management. The whole admin area is restricted to the admin role.",
+      "Searchable, sortable tables and forms for employees, departments, countries, states and cities, plus user, role and permission management. Implemented in small companies to manage their employees; the public repository holds the base project and the client-modified components are privately owned.",
   },
   {
     title: "Carbon Tracker",
@@ -151,13 +153,12 @@ const projects = [
       "A compact Vue 3 and Express app for logging daily energy use, with JWT authentication and SQLite.",
     technologies: ["VUE 3", "VITE", "EXPRESS 5", "SQLITE", "JWT", "BCRYPT"],
     art: "project-art-forecast",
+    image: "/projects/carbon.jpg",
     artLabel: "VUE / EXPRESS",
-    chartTop: "ENERGY LOG",
-    chartBottom: "KWH PER DAY",
     sourceUrl: "https://github.com/Brian-Dol/carbon-tracker",
     caseStudyUrl: "/work/carbon-tracker",
     details:
-      "Users register, sign in and keep a personal history of daily kWh readings. Passwords are hashed, tokens expire after two hours, and every query is scoped to the signed-in user. CO2 conversion and charts are not implemented yet.",
+      "Built for an NGO. Users register, sign in and keep a personal history of daily kWh readings. Passwords are hashed, tokens expire after two hours, and every query is scoped to the signed-in user. The public repository holds the base project; the client-modified components are privately owned.",
   },
 ];
 
@@ -240,7 +241,7 @@ export default function ProjectGallery() {
               )}
               {project.art === "project-art-forecast" && !project.image && (
                 <div className="forecast-panel">
-                  <span className="forecast-label">{project.chartTop ?? "FORECAST"}</span>
+                  <span className="forecast-label">FORECAST</span>
                   <svg viewBox="0 0 300 150" role="presentation">
                     <path className="chart-grid" d="M0 30H300M0 75H300M0 120H300" />
                     <path
@@ -249,7 +250,7 @@ export default function ProjectGallery() {
                     />
                     <circle cx="295" cy="24" r="5" />
                   </svg>
-                  <span className="forecast-label">{project.chartBottom ?? "SCENARIO → OUTLOOK"}</span>
+                  <span className="forecast-label">SCENARIO → OUTLOOK</span>
                 </div>
               )}
               {project.image && (

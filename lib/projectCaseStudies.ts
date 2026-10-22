@@ -9,7 +9,7 @@ export type ProjectCaseStudy = {
   contribution: string[];
   engineeringNotes: string[];
   outcomes?: string[];
-  limitations?: string[];
+  techReasons?: { name: string; reason: string }[];
   externalUrl?: string;
   sourceUrl?: string;
 };
@@ -44,6 +44,13 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Reported SEO improvement of 25% and lead-generation improvement of 18%.",
       "Reported Arabic SEO reach improvement of 30% and webinar registration growth of 20%.",
     ],
+    techReasons: [
+      { name: "WordPress with custom themes and plugins", reason: "Marketing and legal teams needed to edit content themselves, while the brand and business rules needed behaviour that off-the-shelf themes could not provide. Custom code gave full control without giving up a familiar editor." },
+      { name: "Elementor", reason: "Lets non-developers adjust landing pages quickly without a release, which suited campaign-driven work." },
+      { name: "WPML", reason: "The audience spans English, German, Russian and Arabic, so translation, language switching and right-to-left support had to be built into the CMS." },
+      { name: "Zoho Flow, APIs and webhooks", reason: "Leads and form data had to reach the CRM reliably, and webhooks avoided manual copying between systems." },
+      { name: "GA4, Tag Manager and Search Console", reason: "Measured SEO and lead performance was needed to prove which changes worked." },
+    ],
     externalUrl: "https://shamsfz.ae/",
   },
   {
@@ -56,7 +63,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       { label: "Role", value: "Web developer" },
       { label: "Type", value: "Services website" },
       { label: "Status", value: "Live at runyourtask.com" },
-      { label: "Source", value: "Not public" },
+      { label: "Source", value: "Private (client-owned)" },
     ],
     overview:
       "A services website for Kenyans all over the globe. It helps visitors describe a task and request a quote, or contact the team through WhatsApp.",
@@ -68,6 +75,11 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     engineeringNotes: [
       "The core user journey connects service discovery to a quote request or direct conversation.",
       "The public project information does not specify the underlying framework or measured business outcomes, so this case study focuses on the confirmed user experience.",
+    ],
+    techReasons: [
+      { name: "A fast, content-focused website", reason: "Visitors are often abroad on varied connections, so the priority was a clear, quick page that explains the services and gets them to act." },
+      { name: "Quote request form", reason: "Tasks differ widely, so a form that captures the details up front lets the team price each request properly." },
+      { name: "WhatsApp contact", reason: "It is the channel the audience already uses, so visitors who prefer to chat can start a conversation in one tap." },
     ],
     externalUrl: "https://runyourtask.com/",
   },
@@ -102,6 +114,11 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     ],
     outcomes: [
       "Relevant automation workflows reduced manual workload by 70%+.",
+    ],
+    techReasons: [
+      { name: "LLM APIs", reason: "Recurring work such as classifying, summarising and drafting depends on language understanding that fixed rules cannot cover." },
+      { name: "REST APIs and webhooks", reason: "They are the common language of CRMs and business tools, so data moves between systems the moment something happens." },
+      { name: "n8n, Make.com, Zapier and Zoho Flow", reason: "Visual workflow tools keep automations reviewable and quick to change, with the platform chosen per workflow and the team already using it." },
     ],
   },
   {
@@ -146,9 +163,12 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     outcomes: [
       "Automation and AI-assisted workflows reduced manual workload by 70%+.",
     ],
-    limitations: [
-      "The source code belongs to the employer and is private, so this case study describes the architecture and my contribution rather than linking to a repository.",
-      "Descriptions are based on the product's documented structure; internal metrics other than the 70%+ workload reduction are not published.",
+    techReasons: [
+      { name: "Laravel 12 with Sanctum and Fortify", reason: "Mature, batteries-included authentication, two-factor support, validation and queues, which suit a multi-tenant product where access control matters most." },
+      { name: "React, TypeScript and Inertia", reason: "A typed interface that stays close to the backend without a separate API layer for every page." },
+      { name: "OpenAI API", reason: "Turns plain-language requests into runnable tools, with a constrained system prompt to keep output predictable." },
+      { name: "Electron", reason: "The tools run on the user's own machine and need file access, which a browser cannot offer." },
+      { name: "PHPUnit, Jest and GitHub Actions", reason: "Tenant isolation and AI output both need regression protection, so tests run automatically on every change." },
     ],
   },
   {
@@ -166,13 +186,13 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     ],
     facts: [
       { label: "Role", value: "Backend developer" },
-      { label: "Type", value: "REST API" },
-      { label: "Status", value: "Learning and portfolio project" },
-      { label: "Source", value: "Public on GitHub" },
+      { label: "Type", value: "REST API, later used by a Kenyan land-sales company" },
+      { label: "Status", value: "In use by a company selling land in Kenya" },
+      { label: "Source", value: "Base project public; client-modified components private" },
     ],
     sourceUrl: "https://github.com/Brian-Dol/land-quality-api",
     overview:
-      "A Django REST backend for land management. It models owners, land parcels and soil quality assessments behind JWT authentication, and ships with environment-based configuration and a Docker Compose setup for the API and its PostgreSQL database. A separate coordinate-analysis prototype, which targets PostGIS and external geospatial data, was explored alongside it and is not part of the published repository.",
+      "A Django REST backend for land management. It models owners, land parcels and soil quality assessments behind JWT authentication, and ships with environment-based configuration and a Docker Compose setup for the API and its PostgreSQL database. The API was later used by a company that sells land in Kenya. The public repository contains the base project only; the components completed or modified for that company are privately owned and cannot be shared.",
     contribution: [
       "Modelled owners, land parcels and quality assessments (pH level, moisture content, nutrient levels and a quality score) with relational links between them.",
       "Exposed CRUD REST endpoints with Django REST Framework viewsets and a router, secured by JWT token issue and refresh.",
@@ -184,11 +204,11 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Serializers and viewsets keep the API thin: validation and persistence stay in the Django models and DRF layers.",
       "The coordinate-analysis prototype separates analysis and tokens into their own apps. Its geospatial retrieval step returns placeholder values, and integrations with OpenStreetMap, NASA Earthdata and Google Earth Engine are planned, not claimed as complete.",
     ],
-    limitations: [
-      "No automated tests yet for serializers and permissions.",
-      "Any authenticated user can read and change all records; per-owner permissions are still to be added.",
-      "No pagination, filtering or generated OpenAPI documentation.",
-      "The real geospatial analysis is a prototype and not published.",
+    techReasons: [
+      { name: "Django and Django REST Framework", reason: "Django's ORM, admin and security defaults give a reliable data layer quickly, and DRF's viewsets and serializers turn models into a consistent REST API with little boilerplate." },
+      { name: "SimpleJWT", reason: "Stateless tokens let any client, such as a web or mobile app, authenticate against the API without server-side sessions." },
+      { name: "PostgreSQL", reason: "Land, owner and assessment data is relational, and PostgreSQL offers strong integrity guarantees and a path to PostGIS if spatial queries are needed." },
+      { name: "Docker Compose", reason: "Runs the API and its database together the same way on every machine, which made handover and deployment simpler." },
     ],
   },
   {
@@ -209,13 +229,13 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     ],
     facts: [
       { label: "Role", value: "Full stack developer" },
-      { label: "Type", value: "MSc capstone" },
-      { label: "Status", value: "Baseline prototype" },
-      { label: "Source", value: "Public on GitHub" },
+      { label: "Type", value: "MSc capstone, later adapted into a client project" },
+      { label: "Status", value: "Adapted for a client" },
+      { label: "Source", value: "Base project public; client-modified components private" },
     ],
     sourceUrl: "https://github.com/Brian-Dol/stock-prediction-platform",
     overview:
-      "A stock forecasting application developed as the capstone for the MSc in Cloud and Network Security. Investors enter a ticker and timeframe and see results charted in a React dashboard, while administrators manage users and review prediction activity. The system is split into a React frontend, a Node/Express API with MongoDB, and a Flask service for market data and modelling.",
+      "A stock forecasting application developed as the capstone for the MSc in Cloud and Network Security, and later transformed into a client project. Investors enter a ticker and timeframe and see results charted in a React dashboard, while administrators manage users and review prediction activity. The system is split into a React frontend, a Node/Express API with MongoDB, and a Flask service for market data and modelling. The public repository contains the MSc base project only; the components completed or modified for the client are privately owned and cannot be shared.",
     contribution: [
       "Built the React dashboard with sign-up, login, a prediction form, Chart.js visualisation of results, and admin pages for user details and prediction history.",
       "Built the Node/Express API with bcrypt-hashed passwords, JWT authentication, password change, and prediction history stored per user in MongoDB.",
@@ -231,10 +251,12 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     outcomes: [
       "Completed as an MSc capstone for Cloud and Network Security (GPA 4.0 / 4.0).",
     ],
-    limitations: [
-      "The forecasting model is a baseline and is not yet used by the prediction endpoint.",
-      "The API needs token expiry, rate limiting, request validation and automated tests before any real deployment.",
-      "API base URLs are still hard-coded in the frontend, and there is no Docker Compose setup in the published repository yet.",
+    techReasons: [
+      { name: "React and Chart.js", reason: "A component-based dashboard makes the sign-in, prediction form and admin screens easy to compose, and Chart.js turns price series into readable charts with little code." },
+      { name: "Node.js and Express", reason: "A lightweight API layer for authentication, roles and prediction history, in the same language as the frontend." },
+      { name: "MongoDB", reason: "Prediction results vary in shape and are stored per user, which fits a flexible document model." },
+      { name: "JWT and bcrypt", reason: "Hashed passwords and stateless signed tokens keep credentials protected and let admin routes verify the caller's role on every request, in line with the security focus of the MSc." },
+      { name: "Flask, pandas, yfinance and scikit-learn", reason: "Python is the natural home for market data and modelling, and running it as its own service keeps data science work separate from the web API." },
     ],
   },
   {
@@ -245,13 +267,13 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     technologies: ["Laravel 9", "PHP 8", "Breeze", "Tailwind CSS", "Alpine.js", "MySQL", "Laravel Sail", "PHPUnit"],
     facts: [
       { label: "Role", value: "Full stack developer" },
-      { label: "Type", value: "Booking and admin application" },
-      { label: "Status", value: "Portfolio project" },
-      { label: "Source", value: "Public on GitHub" },
+      { label: "Type", value: "Built for a small restaurant chain in the UAE" },
+      { label: "Status", value: "Transformed and delivered for a client" },
+      { label: "Source", value: "Base project public; client-modified components private" },
     ],
     sourceUrl: "https://github.com/Brian-Dol/Restaurant-Reservation-System-Laravel",
     overview:
-      "A restaurant website with a public menu and a reservation flow. Guests choose a date, time and party size, then pick from the tables that are actually free. Staff manage categories, menus, tables and reservations from a protected admin panel.",
+      "A restaurant website with a public menu and a reservation flow. Guests choose a date, time and party size, then pick from the tables that are actually free. Staff manage categories, menus, tables and reservations from a protected admin panel. The project was transformed and produced for a small chain of restaurants in the UAE. The public repository contains the base project only; the components completed or modified for the client are privately owned and cannot be shared.",
     contribution: [
       "Built the two-step reservation flow: guest details and date and time are validated and kept in the session, then the guest chooses from available tables.",
       "Implemented booking rules on the server: reservations within the next week and between 17:00 and 23:00, using custom validation rules.",
@@ -265,10 +287,12 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "The public site and the admin area use separate controller namespaces and routes, keeping guest-facing and staff-facing code apart.",
       "Laravel Sail provides a Docker-based development environment.",
     ],
-    limitations: [
-      "No online payments or email confirmations are implemented; reservations are stored only.",
-      "Opening hours and the one-week booking window are hard-coded in the validation rules rather than configurable.",
-      "The seeded admin account must be replaced before any real deployment.",
+    techReasons: [
+      { name: "Laravel 9 and PHP 8", reason: "Routing, validation, Eloquent relationships and authentication are built in, which suits a booking system with strict server-side rules and an admin area, and PHP hosting is easy to find for a small business." },
+      { name: "Laravel Breeze", reason: "A lightweight, proven login system for staff, with no need to build authentication from scratch." },
+      { name: "Blade, Tailwind CSS and Alpine.js", reason: "Server-rendered pages load fast on any device guests use, and Alpine adds just enough interactivity without a full frontend framework." },
+      { name: "MySQL", reason: "Tables, menus and reservations are relational, and availability is calculated by querying existing bookings." },
+      { name: "Laravel Sail and PHPUnit", reason: "Docker keeps the development environment identical across machines, and PHPUnit protects the booking rules." },
     ],
   },
   {
@@ -279,13 +303,13 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     technologies: ["Laravel 10", "Splade", "Vue 3", "Tailwind CSS", "Vite", "spatie/laravel-permission", "MySQL", "Laravel Dusk"],
     facts: [
       { label: "Role", value: "Full stack developer" },
-      { label: "Type", value: "Internal admin application" },
-      { label: "Status", value: "Portfolio project" },
-      { label: "Source", value: "Public on GitHub" },
+      { label: "Type", value: "Implemented in small companies" },
+      { label: "Status", value: "In use to manage employees" },
+      { label: "Source", value: "Base project public; client-modified components private" },
     ],
     sourceUrl: "https://github.com/Brian-Dol/Employee-management-system-Laravel",
     overview:
-      "An application that lets an organisation keep and maintain its employee records. The admin area provides searchable, sortable tables and forms for employees, departments and locations, and screens for managing users, roles and permissions.",
+      "An application that lets an organisation keep and maintain its employee records. The admin area provides searchable, sortable tables and forms for employees, departments and locations, and screens for managing users, roles and permissions. It was implemented in small companies to manage their employees. The public repository contains the base project only; the components completed or modified for those companies are privately owned and cannot be shared.",
     contribution: [
       "Modelled employees with department, country, state and city relationships, plus birth and hire dates.",
       "Built admin resources for employees, departments, countries, states and cities, and for users, roles and permissions.",
@@ -298,10 +322,13 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Authorization is handled by roles and permissions in the database rather than hard-coded checks.",
       "Dusk browser testing and PHPUnit are configured for the project.",
     ],
-    limitations: [
-      "The seeder creates sample users and an admin role only; countries, states, cities and departments are added through the admin UI.",
-      "The non-admin dashboard is the stock Breeze page; all management features live under the admin area.",
-      "Test coverage is limited to the framework's default setup.",
+    techReasons: [
+      { name: "Laravel 10", reason: "A structured framework with Eloquent relationships, validation and policies, well suited to record-heavy business software that has to stay maintainable." },
+      { name: "Splade and Vue 3", reason: "Splade gives Blade pages the feel of a single-page app, with modals, tables and forms, without building and maintaining a separate API and frontend, which kept delivery quick for small companies." },
+      { name: "spatie/laravel-permission", reason: "Database-driven roles and permissions mean each company can control who sees and changes employee data without code changes." },
+      { name: "spatie/laravel-query-builder", reason: "Provides filtering, sorting and searching on large employee lists in a consistent, safe way." },
+      { name: "MySQL, Tailwind CSS and Vite", reason: "A reliable relational store for employee, department and location data, with a fast build pipeline and consistent styling." },
+      { name: "Laravel Dusk and PHPUnit", reason: "Browser and unit tests check that critical admin flows keep working as the system changes." },
     ],
   },
   {
@@ -312,13 +339,13 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     technologies: ["Vue 3", "Vite", "Node.js", "Express 5", "SQLite", "JWT", "bcrypt", "axios"],
     facts: [
       { label: "Role", value: "Full stack developer" },
-      { label: "Type", value: "Authenticated web app" },
-      { label: "Status", value: "Small portfolio project" },
-      { label: "Source", value: "Public on GitHub" },
+      { label: "Type", value: "Built as an app for an NGO" },
+      { label: "Status", value: "Delivered for a client" },
+      { label: "Source", value: "Base project public; client-modified components private" },
     ],
     sourceUrl: "https://github.com/Brian-Dol/carbon-tracker",
     overview:
-      "A small full-stack application for recording daily electricity consumption in kWh. Users register, log in and keep a personal history of their usage, which is the raw data behind a carbon footprint.",
+      "A full-stack application made for an NGO to record daily electricity consumption in kWh. Users register, log in and keep a personal history of their usage, which is the raw data behind a carbon footprint. The public repository contains the base project only; the components completed or modified for the client are privately owned and cannot be shared.",
     contribution: [
       "Built an Express API with registration and login, bcrypt-hashed passwords and JWTs that expire after two hours.",
       "Added endpoints to create and list energy logs, scoped to the authenticated user.",
@@ -330,10 +357,12 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Every log query is filtered by the user ID from the verified token, so users cannot read each other's data.",
       "The frontend reads the API address from an environment variable, so it can point at any backend.",
     ],
-    limitations: [
-      "Only raw kWh is stored; CO2 conversion, charts and totals are not implemented yet.",
-      "The backend falls back to a built-in JWT secret when none is set, so a secret must be configured outside local development.",
-      "The repository still contains committed frontend dependencies that should be removed and git-ignored.",
+    techReasons: [
+      { name: "Vue 3 and Vite", reason: "A small reactive interface for entering and reviewing readings, with a fast build and very little overhead for a focused app." },
+      { name: "Node.js and Express 5", reason: "A minimal API in the same language as the frontend, enough for authentication and log endpoints without extra framework weight." },
+      { name: "SQLite", reason: "Needs no database server, so the NGO could run and back up the app with minimal setup and cost." },
+      { name: "JWT and bcrypt", reason: "Hashed passwords and short-lived signed tokens keep each user's readings private and let the API verify who is asking on every request." },
+      { name: "axios", reason: "A simple, consistent way for the interface to call the API and attach the token." },
     ],
   },
 ];

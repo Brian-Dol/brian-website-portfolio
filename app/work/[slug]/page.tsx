@@ -34,7 +34,6 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
   const diagramNo = diagram ? section++ : 0;
   const contributionNo = section++;
   const engineeringNo = section++;
-  const limitationsNo = project.limitations ? section++ : 0;
   const outcomesNo = project.outcomes ? section++ : 0;
 
   return (
@@ -121,20 +120,6 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           </div>
         </section>
 
-        {project.limitations && (
-          <section className="case-section">
-            <p className="eyebrow">{n(limitationsNo)} / LIMITATIONS</p>
-            <div className="case-content">
-              <h2>Limitations and next steps</h2>
-              <ul className="case-list">
-                {project.limitations.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        )}
-
         {project.outcomes && (
           <section className="case-section">
             <p className="eyebrow">{n(outcomesNo)} / OUTCOMES</p>
@@ -157,11 +142,15 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               <span key={technology}>{technology}</span>
             ))}
           </div>
-          <p>
-            This case study describes the work using the details available in the project
-            portfolio and professional experience. Where implementation specifics or measured
-            outcomes are not documented, they are intentionally not assumed.
-          </p>
+          {project.techReasons && (
+            <ul className="case-list case-tech-reasons">
+              {project.techReasons.map((item) => (
+                <li key={item.name}>
+                  <strong>{item.name}.</strong> {item.reason}
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       </main>
       <footer className="site-footer page-wrap">
