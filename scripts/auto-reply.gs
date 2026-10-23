@@ -29,7 +29,7 @@ function doPost(e) {
       "Hi " + name + ",\n\n" +
       "Thank you for reaching out" + topic + ". I've received your message and will review it " +
       "personally. I'll get back to you as soon as I can.\n\n" +
-      "In the meantime, you can find my work and CV at https://portfolio.dol-brian23.workers.dev/\n\n" +
+      "In the meantime, you can find my work and CV at https://portfolio.briandol.workers.dev/\n\n" +
       "Best regards,\nBrian Dol\nSenior Full Stack Engineer\n\n" +
       "This is an automatic confirmation. You can reply to this email to reach me directly.";
 

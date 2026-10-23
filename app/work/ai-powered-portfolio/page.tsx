@@ -3,7 +3,7 @@ import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 import SiteHeader from "@/components/SiteHeader";
 import { architectureDiagrams } from "@/lib/architectureDiagrams";
 
-const liveUrl = "https://portfolio.dol-brian23.workers.dev/";
+const liveUrl = "https://portfolio.briandol.workers.dev/";
 const sourceUrl = "https://github.com/Brian-Dol/brian-website-portfolio";
 
 const decisions = [

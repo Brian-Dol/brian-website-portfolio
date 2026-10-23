@@ -72,7 +72,7 @@ const projects = [
     ],
     tradeoffs:
       "The chatbot uses a grounded system prompt rather than a vector database or retrieval pipeline because its knowledge base is small. Current opportunities include API rate limiting, automated tests, streamed responses, and improved chatbot accessibility. Key package versions are Next.js ^16.0.0, React ^19.0.0, vinext ^1.2.1, Vite ^8.3.0, and @vinext/cloudflare ^1.1.1; the version ranges and Cloudflare runtime adapter should be revalidated when upgrading.",
-    liveUrl: "https://portfolio.dol-brian23.workers.dev/",
+    liveUrl: "https://portfolio.briandol.workers.dev/",
     sourceUrl: "https://github.com/Brian-Dol/brian-website-portfolio",
     caseStudyUrl: "/work/ai-powered-portfolio",
   },
@@ -208,7 +208,7 @@ export default function ProjectGallery() {
                     <i />
                     <i />
                     <i />
-                    <span>portfolio.dol-brian23.workers.dev</span>
+                    <span>portfolio.briandol.workers.dev</span>
                   </div>
                   <div className="portfolio-preview-content">
                     <span className="portfolio-preview-label">FULL STACK · AI · CLOUD</span>

@@ -9,7 +9,7 @@
 ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-f38020?style=flat-square&logo=cloudflare&logoColor=white)
 ![Workers AI](https://img.shields.io/badge/Workers%20AI-Llama%203.1-f38020?style=flat-square&logo=cloudflare&logoColor=white)
 
-**Live: [portfolio.dol-brian23.workers.dev](https://portfolio.dol-brian23.workers.dev/)**
+**Live: [portfolio.briandol.workers.dev](https://portfolio.briandol.workers.dev/)**
 
 </div>
 
@@ -88,4 +88,4 @@ cloudflare.config.ts  vite.config.ts
 
 ## 👤 Author
 
-**Brian Dol**, Senior Full Stack Engineer · [Portfolio](https://portfolio.dol-brian23.workers.dev/) · [LinkedIn](https://linkedin.com/in/brian-dol-31a06115a/)
+**Brian Dol**, Senior Full Stack Engineer · [Portfolio](https://portfolio.briandol.workers.dev/) · [LinkedIn](https://linkedin.com/in/brian-dol-31a06115a/)
